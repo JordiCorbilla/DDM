@@ -1,0 +1,1 @@
+java jade.Boot -gui -local-port 1099 -agents Manager:ddm.agents.ManagerAgent;Classifier1:ddm.agents.ClassifierAgent

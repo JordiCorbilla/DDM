@@ -1,0 +1,23 @@
+
+ % 1. Title: Iris Plants Database
+   % 
+   % 2. Sources:
+   %      (a) Creator: R.A. Fisher
+   %      (b) Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)
+   %      (c) Date: July, 1988
+   % 
+   @RELATION fertility
+
+   @ATTRIBUTE Season  NUMERIC
+   @ATTRIBUTE Age  NUMERIC
+   @ATTRIBUTE disease  NUMERIC
+   @ATTRIBUTE Accident  NUMERIC
+   @ATTRIBUTE Intervention  NUMERIC
+   @ATTRIBUTE Highfever  NUMERIC
+   @ATTRIBUTE alcohol  NUMERIC
+   @ATTRIBUTE smoking  NUMERIC
+   @ATTRIBUTE sitting  NUMERIC
+   @ATTRIBUTE output {N,O}
+
+@DATA
+-1,0.67,0,0,1,0,0.6,0,0.5,O

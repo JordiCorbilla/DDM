@@ -1,0 +1,75 @@
+May 18, 2014 6:25:31 PM Manager Agent jordicoll-PC Manager: Starting Agent
+May 18, 2014 6:25:31 PM Manager Agent jordicoll-PC Manager: Reading configuration file
+May 18, 2014 6:25:31 PM Manager Agent jordicoll-PC Manager: Registering language and ontology
+May 18, 2014 6:25:31 PM Manager Agent jordicoll-PC Manager: Setting up behaviours
+May 18, 2014 6:25:31 PM Manager Agent jordicoll-PC Manager: RegisterInDFBehaviour - start
+May 18, 2014 6:25:31 PM Manager Agent jordicoll-PC Manager: Manager is ready.
+May 18, 2014 6:25:31 PM Manager Agent jordicoll-PC Manager: RegisterInDFBehaviour - end
+May 18, 2014 6:25:42 PM Manager Agent jordicoll-PC Manager: ThreeStepsBehaviour - start
+May 18, 2014 6:25:42 PM Manager Agent jordicoll-PC Manager: ThreeStepsBehaviour - end
+May 18, 2014 6:25:42 PM Manager Agent jordicoll-PC Manager: ThreeStepsBehaviour - start
+May 18, 2014 6:25:42 PM Manager Agent jordicoll-PC Manager: ThreeStepsBehaviour - end
+May 18, 2014 6:25:42 PM Manager Agent jordicoll-PC Manager: CreateDefinedAgentBehaviour - start
+May 18, 2014 6:25:42 PM Manager Agent jordicoll-PC Manager: CreateDefinedAgentBehaviour - end
+May 18, 2014 6:25:42 PM Manager Agent jordicoll-PC Manager: Create Agent - start
+May 18, 2014 6:25:44 PM Manager Agent jordicoll-PC Manager: Create Agent - end
+May 18, 2014 6:25:44 PM Classifier Agent jordicoll-PC Classifier1: Default Classifier choosen by agent: weka.classifiers.trees.J48
+May 18, 2014 6:25:44 PM Classifier Agent jordicoll-PC Classifier1: Perentage of training data the agent will use: 64
+May 18, 2014 6:25:44 PM Classifier Agent jordicoll-PC Classifier1: RegisterInDFBehaviour - start
+May 18, 2014 6:25:44 PM Classifier Agent jordicoll-PC Classifier1: Classifier1 is ready.
+May 18, 2014 6:25:44 PM Classifier Agent jordicoll-PC Classifier1: RegisterInDFBehaviour - end
+May 18, 2014 6:25:46 PM Manager Agent jordicoll-PC Manager: Create Agent - start
+May 18, 2014 6:25:47 PM Manager Agent jordicoll-PC Manager: Create Agent - end
+May 18, 2014 6:25:47 PM Classifier Agent jordicoll-PC Classifier2: Default Classifier choosen by agent: weka.classifiers.trees.J48
+May 18, 2014 6:25:47 PM Classifier Agent jordicoll-PC Classifier2: Perentage of training data the agent will use: 78
+May 18, 2014 6:25:47 PM Classifier Agent jordicoll-PC Classifier2: RegisterInDFBehaviour - start
+May 18, 2014 6:25:47 PM Classifier Agent jordicoll-PC Classifier2: Classifier2 is ready.
+May 18, 2014 6:25:47 PM Classifier Agent jordicoll-PC Classifier2: RegisterInDFBehaviour - end
+May 18, 2014 6:25:49 PM Manager Agent jordicoll-PC Manager: Create Agent - start
+May 18, 2014 6:25:50 PM Manager Agent jordicoll-PC Manager: Create Agent - end
+May 18, 2014 6:25:50 PM Classifier Agent jordicoll-PC Classifier3: Default Classifier choosen by agent: weka.classifiers.trees.J48
+May 18, 2014 6:25:50 PM Classifier Agent jordicoll-PC Classifier3: Perentage of training data the agent will use: 38
+May 18, 2014 6:25:50 PM Classifier Agent jordicoll-PC Classifier3: RegisterInDFBehaviour - start
+May 18, 2014 6:25:50 PM Classifier Agent jordicoll-PC Classifier3: Classifier3 is ready.
+May 18, 2014 6:25:50 PM Classifier Agent jordicoll-PC Classifier3: RegisterInDFBehaviour - end
+May 18, 2014 6:25:52 PM Manager Agent jordicoll-PC Manager: SendConfigurationToClassifiers - start
+May 18, 2014 6:25:52 PM Manager Agent jordicoll-PC Manager: Looking for agents online
+May 18, 2014 6:25:52 PM Manager Agent jordicoll-PC Manager: Agents found: 3
+May 18, 2014 6:25:52 PM Manager Agent jordicoll-PC Manager: Sending data to : ( agent-identifier :name Classifier2@192.168.1.85:1099/JADE  :addresses (sequence http://jordicoll-PC:7778/acc ))
+May 18, 2014 6:25:52 PM Manager Agent jordicoll-PC Manager: Sending data to : ( agent-identifier :name Classifier1@192.168.1.85:1099/JADE  :addresses (sequence http://jordicoll-PC:7778/acc ))
+May 18, 2014 6:25:52 PM Classifier Agent jordicoll-PC Classifier2: Request from Manager
+May 18, 2014 6:25:52 PM Classifier Agent jordicoll-PC Classifier1: Request from Manager
+May 18, 2014 6:25:52 PM Classifier Agent jordicoll-PC Classifier2: Classifier requested by Manager : IBk
+May 18, 2014 6:25:52 PM Manager Agent jordicoll-PC Manager: Sending data to : ( agent-identifier :name Classifier3@192.168.1.85:1099/JADE  :addresses (sequence http://jordicoll-PC:7778/acc ))
+May 18, 2014 6:25:52 PM Classifier Agent jordicoll-PC Classifier2: Sending data to : ( agent-identifier :name Manager@192.168.1.85:1099/JADE  :addresses (sequence http://jordicoll-PC:7778/acc ))
+May 18, 2014 6:25:52 PM Classifier Agent jordicoll-PC Classifier1: Classifier requested by Manager : J48
+May 18, 2014 6:25:52 PM Classifier Agent jordicoll-PC Classifier3: Request from Manager
+May 18, 2014 6:25:52 PM Classifier Agent jordicoll-PC Classifier3: Classifier requested by Manager : MLP
+May 18, 2014 6:25:52 PM Classifier Agent jordicoll-PC Classifier1: Sending data to : ( agent-identifier :name Manager@192.168.1.85:1099/JADE  :addresses (sequence http://jordicoll-PC:7778/acc ))
+May 18, 2014 6:25:52 PM Classifier Agent jordicoll-PC Classifier3: Sending data to : ( agent-identifier :name Manager@192.168.1.85:1099/JADE  :addresses (sequence http://jordicoll-PC:7778/acc ))
+May 18, 2014 6:25:52 PM Manager Agent jordicoll-PC Manager: SendConfigurationToClassifiers - end
+May 18, 2014 6:25:52 PM Manager Agent jordicoll-PC Manager: Classifier Settings received Agent: Classifier2 Classifier: IBk Percentage: 78
+May 18, 2014 6:25:53 PM Manager Agent jordicoll-PC Manager: Classifier Settings received Agent: Classifier2 Classifier: IBk Percentage: 78
+May 18, 2014 6:25:54 PM Manager Agent jordicoll-PC Manager: Classifier Settings received Agent: Classifier1 Classifier: J48 Percentage: 64
+May 18, 2014 6:25:55 PM Manager Agent jordicoll-PC Manager: Classifier Settings received Agent: Classifier1 Classifier: J48 Percentage: 64
+May 18, 2014 6:25:56 PM Manager Agent jordicoll-PC Manager: Classifier Settings received Agent: Classifier3 Classifier: MLP Percentage: 38
+May 18, 2014 6:25:57 PM Manager Agent jordicoll-PC Manager: Classifier Settings received Agent: Classifier3 Classifier: MLP Percentage: 38
+May 18, 2014 6:26:05 PM Manager Agent jordicoll-PC Manager: SendConfigurationToClassifiers - start
+May 18, 2014 6:26:05 PM Manager Agent jordicoll-PC Manager: Looking for agents online
+May 18, 2014 6:26:05 PM Manager Agent jordicoll-PC Manager: Agents found: 3
+May 18, 2014 6:26:05 PM Manager Agent jordicoll-PC Manager: Sending data to : ( agent-identifier :name Classifier2@192.168.1.85:1099/JADE  :addresses (sequence http://jordicoll-PC:7778/acc ))
+May 18, 2014 6:26:05 PM Manager Agent jordicoll-PC Manager: Sending data to : ( agent-identifier :name Classifier1@192.168.1.85:1099/JADE  :addresses (sequence http://jordicoll-PC:7778/acc ))
+May 18, 2014 6:26:05 PM Manager Agent jordicoll-PC Manager: Sending data to : ( agent-identifier :name Classifier3@192.168.1.85:1099/JADE  :addresses (sequence http://jordicoll-PC:7778/acc ))
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier1: Request from Manager
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier2: Request from Manager
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier3: Request from Manager
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier1: Folder location: C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/data/fertility_Diagnosis_train.arff
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier1: Number of header rows received from Manager: 22
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier1: Number of rows received from Manager: 53
+May 18, 2014 6:26:05 PM Manager Agent jordicoll-PC Manager: SendConfigurationToClassifiers - end
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier3: Folder location: C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/data/fertility_Diagnosis_train.arff
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier3: Number of header rows received from Manager: 22
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier3: Number of rows received from Manager: 25
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier2: Folder location: C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/data/fertility_Diagnosis_train.arff
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier2: Number of header rows received from Manager: 22
+May 18, 2014 6:26:05 PM Classifier Agent jordicoll-PC Classifier2: Number of rows received from Manager: 43
