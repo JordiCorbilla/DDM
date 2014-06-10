@@ -36,6 +36,12 @@ import java.io.InputStreamReader;
 import ddm.agents.ManagerAgent;
 import ddm.logging.ShowMessage;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Behaviour that displays the command line section. This gives the user a set of options so 
+ * it can perform the operation needed according to the state of the application
+ */
 @SuppressWarnings("serial")
 public class WaitUserCommandBehaviour extends OneShotBehaviour {
 

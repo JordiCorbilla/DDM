@@ -31,6 +31,11 @@ package ddm.decision;
 import java.util.Enumeration;
 import java.util.Vector;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Class that exposes the OWA operator
+ */
 public class AggregationOperator {
 
 	public double owa(Vector<Double> W, Vector<Double> A) {

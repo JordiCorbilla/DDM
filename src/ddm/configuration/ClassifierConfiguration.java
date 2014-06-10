@@ -33,6 +33,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * This class holds the parameters of the Configuration for the classifier
+ */
 @SuppressWarnings("serial")
 public class ClassifierConfiguration implements java.io.Serializable{
 

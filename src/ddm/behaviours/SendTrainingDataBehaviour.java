@@ -44,6 +44,11 @@ import ddm.logging.ShowMessage;
 import ddm.ontology.Arff_Training_Repository;
 import ddm.ontology.ClassifierOntology;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Behaviour that sends the training data to the agent
+ */
 @SuppressWarnings("serial")
 public class SendTrainingDataBehaviour extends OneShotBehaviour {
 

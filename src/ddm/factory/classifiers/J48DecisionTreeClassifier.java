@@ -28,10 +28,18 @@
 
 package ddm.factory.classifiers;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Class that executes a decision tree algorithm
+ */
 public class J48DecisionTreeClassifier extends ClassifierInstance {
 
 	private weka.classifiers.trees.J48 j48DecisionTree;
 
+	/**
+	 * Method that trains the classifier
+	 */
 	@Override
 	public void TrainClassifier() {
 		// Load Training data
@@ -52,6 +60,11 @@ public class J48DecisionTreeClassifier extends ClassifierInstance {
 
 		setJ48DecisionTree(new weka.classifiers.trees.J48());
 		try {
+			//A set of options can be defined here
+			String[] options = new String[1];
+			options[0] = "-U"; 				// unpruned tree	
+			getJ48DecisionTree().setOptions(options);
+			
 			getJ48DecisionTree().buildClassifier(trainingInstances);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,6 +74,9 @@ public class J48DecisionTreeClassifier extends ClassifierInstance {
 		setDurationTrainingTimeMs(finishTimeMillis - startTimeMillis);
 	}
 
+	/**
+	 * Method that classifies an individual instance
+	 */
 	@Override
 	public void ClassifyInstances() {
 		// Load data to classify
@@ -109,14 +125,25 @@ public class J48DecisionTreeClassifier extends ClassifierInstance {
 		setCorrectIntances(numCorrect);
 	}
 
+	/**
+	 * Returns the classifier
+	 * @return J48
+	 */
 	public weka.classifiers.trees.J48 getJ48DecisionTree() {
 		return j48DecisionTree;
 	}
 
+	/**
+	 * Sets the classifier
+	 * @param j48DecisionTree
+	 */
 	public void setJ48DecisionTree(weka.classifiers.trees.J48 j48DecisionTree) {
 		this.j48DecisionTree = j48DecisionTree;
 	}
 
+	/**
+	 * Returns the description of the weka algorithm
+	 */
 	@Override
 	public String type() {
 		return "weka.classifiers.trees.J48";

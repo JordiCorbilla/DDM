@@ -38,8 +38,20 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 
 import java.util.Iterator;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Search agent in the DF functionality
+ */
 public class JadeAgents {
 
+	/**
+	 * Search Jade agents
+	 * @param a
+	 * @param type
+	 * @param name
+	 * @return Agent
+	 */
 	public static jade.util.leap.List SearchAgents(Agent a, String type,
 			String name) {
 		jade.util.leap.List results = new jade.util.leap.ArrayList();

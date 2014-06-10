@@ -37,7 +37,7 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 
 /***
  * 
- * @author jordi coll
+ * @author jordi Corbilla
  * Register in the DF (Directory Facilitator) for the client agent to be able to retrieve its AID.
  *
  */

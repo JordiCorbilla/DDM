@@ -38,7 +38,8 @@ import ddm.ontology.DataInstance;
 
 /***
  * 
- * @author jordi coll DatasetManager creates the logic partition of the data
+ * @author jordi Corbilla 
+ * DatasetManager creates the logic partition of the data
  *         from the ARFF file
  * 
  */

@@ -36,7 +36,8 @@ import java.util.ArrayList;
 
 /***
  * 
- * @author jordi coll This class contains an ARFF file
+ * @author jordi Corbilla
+ * This class contains an ARFF file
  * 
  */
 

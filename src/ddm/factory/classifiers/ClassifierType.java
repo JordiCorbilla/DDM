@@ -28,9 +28,22 @@
 
 package ddm.factory.classifiers;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Types of classifiers
+ */
 public enum ClassifierType {
 	J48DecisionTree, KNearestNeighbour, NeuronalNetwork;
 
+	/**
+	 * Method that handles:
+	 * 	J48DecisionTree
+	 *  KNearestNeighbour
+	 *  NeuronalNetwork
+	 * @param type
+	 * @return ClassifierType
+	 */
 	public static ClassifierType GetType(String type) {
 		ClassifierType ct = null;
 		switch (type) {

@@ -38,6 +38,11 @@ import ddm.factory.classifiers.ClassifierInstance;
 import ddm.factory.classifiers.ClassifierInstanceFactory;
 import ddm.factory.classifiers.ClassifierType;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Test Factory
+ */
 public class TestClassifierFactory {
 
 	@Before

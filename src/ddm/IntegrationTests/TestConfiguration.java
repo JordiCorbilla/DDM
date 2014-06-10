@@ -37,6 +37,11 @@ import org.junit.Test;
 import ddm.configuration.ClassifierConfiguration;
 import ddm.configuration.ManagerConfiguration;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Test configuration
+ */
 public class TestConfiguration {
 
 	@Before

@@ -40,6 +40,11 @@ import ddm.decision.DecisionType;
 import ddm.ontology.ClassificationResult;
 import ddm.ontology.DataInstance;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Test decision
+ */
 public class TestDecisionMaker {
 
 	@Before

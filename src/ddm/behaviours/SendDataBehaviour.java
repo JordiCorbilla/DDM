@@ -52,6 +52,13 @@ import ddm.ontology.ClassificationResult;
 import ddm.ontology.ClassifierOntology;
 import ddm.ontology.DataInstance;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Behaviour that manages the communication between manager and agents. This class sends the information
+ * to each individual classifier and it waits until the response is back from the server.
+ * It's using a bespoke behaviour with three different steps.
+ */
 @SuppressWarnings("serial")
 public class SendDataBehaviour extends Behaviour {
 
@@ -130,12 +137,15 @@ public class SendDataBehaviour extends Behaviour {
 			if (index < DataSize)
 			{
 				index++;
-				System.out.println("GOING TO STEP 2");
+				System.out.println("GOING TO STEP 2 - Decision");
 				step = 2;
 			}
 			break;
 		case 2:
+			//This property is set to the number of agents + 1 as the framework is sending duplicated messages.
+			//http://jade.17737.x6.nabble.com/Receiving-duplicate-messages-td5002566.html
 			int number = myAgent.getNumberOfAgents() + 1;
+			
 			//Receive all the proposals from every agent
 			ACLMessage reply = myAgent.receive(mt);
 			if (reply != null) {
@@ -165,11 +175,11 @@ public class SendDataBehaviour extends Behaviour {
 							} catch (InterruptedException e) {
 								e.printStackTrace();
 							}
-							System.out.println("GOING TO STEP 1");
+							System.out.println("GOING TO STEP 1 - Communications");
 						}
 						else if (repliesCnt >= (number*myAgent.getNumberOfAgents()) && (index == DataSize))
 						{
-							System.out.println("GOING TO STEP 3");
+							System.out.println("GOING TO STEP 3 - evaluation");
 							try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {

@@ -35,6 +35,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Properties;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * This class holds the parameters of the Configuration for the Manager
+ */
 @SuppressWarnings("serial")
 public class ManagerConfiguration implements java.io.Serializable{
     

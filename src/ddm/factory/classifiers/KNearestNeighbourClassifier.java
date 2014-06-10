@@ -28,10 +28,18 @@
 
 package ddm.factory.classifiers;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Class that executes a KNearest Neighbour algorithm
+ */
 public class KNearestNeighbourClassifier extends ClassifierInstance {
 
 	private weka.classifiers.lazy.IBk KNearestNeighbours;
 
+	/**
+	 * Method that trains the classifier
+	 */	
 	@Override
 	public void TrainClassifier() {
 		// Load Training data
@@ -61,6 +69,9 @@ public class KNearestNeighbourClassifier extends ClassifierInstance {
 		setDurationTrainingTimeMs(finishTimeMillis - startTimeMillis);
 	}
 
+	/**
+	 * Method that classifies an individual instance
+	 */	
 	@Override
 	public void ClassifyInstances() {
 		// Load data to classify
@@ -109,15 +120,26 @@ public class KNearestNeighbourClassifier extends ClassifierInstance {
 		setCorrectIntances(numCorrect);
 	}
 
+	/**
+	 * Returns the classifier
+	 * @return IBk
+	 */	
 	public weka.classifiers.lazy.IBk getKNearestNeighbours() {
 		return KNearestNeighbours;
 	}
 
+	/**
+	 * Sets the classifier
+	 * @param KNearestNeighbours
+	 */	
 	public void setKNearestNeighbours(
 			weka.classifiers.lazy.IBk KNearestNeighbours) {
 		this.KNearestNeighbours = KNearestNeighbours;
 	}
 
+	/**
+	 * Returns the description of the weka algorithm
+	 */	
 	@Override
 	public String type() {
 		return "weka.classifiers.lazy.IBk";

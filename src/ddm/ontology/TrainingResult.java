@@ -31,7 +31,7 @@ package ddm.ontology;
 import jade.content.AgentAction;
 
 /**
- * Protege name: Arff_Repository
+ * Protege name: TrainingResult
  * 
  * @author ontology bean generator
  * @version 2014/04/15, 22:56:31

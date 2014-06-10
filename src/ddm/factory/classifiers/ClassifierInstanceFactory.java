@@ -30,8 +30,18 @@ package ddm.factory.classifiers;
 
 import java.util.Random;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Factory that handles the list of classifiers available in the system
+ */
 public class ClassifierInstanceFactory {
 
+	/**
+	 * Method that builds the classifier according to a type
+	 * @param type
+	 * @return ClassifierInstance
+	 */
 	public static ClassifierInstance buildClassifier(ClassifierType type) {
 		ClassifierInstance classifier = null;
 		switch (type) {
@@ -50,6 +60,10 @@ public class ClassifierInstanceFactory {
 		return classifier;
 	}
 
+	/**
+	 * Method that returns a random instance
+	 * @return ClassifierInstance
+	 */
 	public static ClassifierInstance giveMeAClassifier() {
 		Random randomGenerator = new Random();
 		int randomInt = randomGenerator.nextInt(2);

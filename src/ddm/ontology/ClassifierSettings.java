@@ -30,6 +30,12 @@ package ddm.ontology;
 
 import jade.content.AgentAction;
 
+/**
+ * file: ClassifierSettings.java
+ * 
+ * @author ontology bean generator
+ * @version 2014/04/15, 22:56:31
+ */
 @SuppressWarnings("serial")
 public class ClassifierSettings implements AgentAction {
 	private String ClassifierModule;

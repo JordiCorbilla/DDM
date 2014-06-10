@@ -30,6 +30,12 @@ package ddm.utils;
 
 import java.util.Random;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * DataUtils class to get a random number according to a range.
+ * This is used for the classifier when choosing the percentage of data to use.
+ */
 public class DataUtils {
 
 	public static int RandomNumber(int minRange, int maxRange) {

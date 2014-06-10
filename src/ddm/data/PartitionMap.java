@@ -30,7 +30,8 @@ package ddm.data;
 
 /***
  * 
- * @author jordi coll This class keeps the details of the partition map
+ * @author jordi corbilla 
+ * This class keeps the details of the partition map
  * 
  */
 

@@ -30,6 +30,12 @@ package ddm.decision;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Unit that create a set of ranges according to weka images.
+ * Once the range is set, we can test if a value belongs to it or not.
+ */
 public class DecisionRange {
 
 	private ArrayList<Range> listRange = null;

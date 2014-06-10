@@ -39,6 +39,11 @@ import org.junit.Test;
 import ddm.data.PartitionList;
 import ddm.ontology.ClassifierSettings;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Unit test to test the correct handling of partitions from a repository file
+ */
 public class TestPartitions {
 
 	private HashMap<String, ClassifierSettings> ClassifierSettings = new HashMap<String, ClassifierSettings>();

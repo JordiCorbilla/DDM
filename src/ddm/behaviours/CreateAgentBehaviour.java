@@ -37,6 +37,12 @@ import jade.core.behaviours.OneShotBehaviour;
 import jade.wrapper.AgentController;
 import jade.wrapper.ContainerController;
 
+/**
+ * @author jordi Corbilla
+ * Behaviour to create additional agents.
+ * This class automatically generates new instances of Jade Agents using the ClassifierAgent class
+ *
+ */
 @SuppressWarnings("serial")
 public class CreateAgentBehaviour extends OneShotBehaviour {
 

@@ -28,10 +28,18 @@
 
 package ddm.factory.classifiers;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Class that executes a Neuronal Network algorithm
+ */
 public class NeuronalNetworkClassifier extends ClassifierInstance {
 
 	private weka.classifiers.functions.MultilayerPerceptron multiLayerPerceptron;
 
+	/**
+	 * Method that trains the classifier
+	 */	
 	@Override
 	public void TrainClassifier() {
 		// Load Training data
@@ -62,6 +70,9 @@ public class NeuronalNetworkClassifier extends ClassifierInstance {
 		setDurationTrainingTimeMs(finishTimeMillis - startTimeMillis);
 	}
 
+	/**
+	 * Method that classifies an individual instance
+	 */	
 	@Override
 	public void ClassifyInstances() {
 		// Load data to classify
@@ -110,15 +121,26 @@ public class NeuronalNetworkClassifier extends ClassifierInstance {
 		setCorrectIntances(numCorrect);
 	}
 
+	/**
+	 * Returns the classifier
+	 * @return MLP
+	 */	
 	public weka.classifiers.functions.MultilayerPerceptron getMultiLayerPerceptron() {
 		return multiLayerPerceptron;
 	}
 
+	/**
+	 * Sets the classifier
+	 * @param multiLayerPerceptron
+	 */	
 	public void setMultiLayerPerceptron(
 			weka.classifiers.functions.MultilayerPerceptron multiLayerPerceptron) {
 		this.multiLayerPerceptron = multiLayerPerceptron;
 	}
 
+	/**
+	 * Returns the description of the weka algorithm
+	 */	
 	@Override
 	public String type() {
 		// TODO Auto-generated method stub

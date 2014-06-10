@@ -32,6 +32,12 @@ import ddm.agents.ManagerAgent;
 import ddm.logging.ShowMessage;
 import jade.core.behaviours.Behaviour;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Behaviour that generated the defined agents and it invokes other steps to ensure that
+ * the communication is granted and all the parameters have been correctly passed through.
+ */
 @SuppressWarnings("serial")
 public class ThreeStepsBehaviour extends Behaviour {
 

@@ -35,6 +35,11 @@ import ddm.jade.JadeAgents;
 import ddm.ontology.ClassifierSettings;
 import jade.core.behaviours.OneShotBehaviour;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Behaviour that generates a list of agents available in the DF
+ */
 @SuppressWarnings("serial")
 public class ListClassifiersBehaviour extends OneShotBehaviour {
 

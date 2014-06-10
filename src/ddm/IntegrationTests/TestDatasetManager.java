@@ -41,6 +41,11 @@ import ddm.data.DatasetManager;
 import ddm.data.PartitionList;
 import ddm.ontology.ClassifierSettings;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Test DataSet manager
+ */
 public class TestDatasetManager {
 
 	private ManagerConfiguration conf = null;

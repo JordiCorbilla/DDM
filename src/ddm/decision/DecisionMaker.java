@@ -39,6 +39,15 @@ import ddm.configuration.ManagerConfiguration;
 import ddm.ontology.ClassificationResult;
 import ddm.ontology.DataInstance;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Decision making class. This class gathers all the information that each agent sends,
+ * sends the information through the aggregation operator and returns a value that can be
+ * contrasted against a stored image (value). Then the decision is made according to a range.
+ * The decision is saved with the original data in a new file that has been configured previously
+ * in the configuration section.
+ */
 public class DecisionMaker {
 
 	private File file = null;
@@ -71,6 +80,12 @@ public class DecisionMaker {
 		}
 	}
 
+	/**
+	 * Final decision using Weighted Arithmetic Mean
+	 * @param dataToPredict
+	 * @param decisionResult
+	 * @param trainingSize
+	 */
 	private void MakeWAM(DataInstance dataToPredict,
 			HashMap<String, ClassificationResult> decisionResult,
 			int trainingSize) {
@@ -126,8 +141,11 @@ public class DecisionMaker {
 		;
 	}
 
-	/*
+	/**
 	 * Decision using the OWA operator
+	 * @param dataToPredict
+	 * @param decisionResult
+	 * @param trainingSize
 	 */
 	private void MakeOWA(DataInstance dataToPredict,
 			HashMap<String, ClassificationResult> decisionResult,
@@ -197,6 +215,13 @@ public class DecisionMaker {
 		;
 	}
 
+	/**
+	 * Method that generates the decision output
+	 * @param type
+	 * @param dataToPredict
+	 * @param decisionResult
+	 * @param trainingSize
+	 */
 	public void Make(DecisionType type, DataInstance dataToPredict,
 			HashMap<String, ClassificationResult> decisionResult,
 			int trainingSize) {
@@ -210,6 +235,10 @@ public class DecisionMaker {
 		}
 	}
 
+	/**
+	 * Method to close the file. 
+	 * THe file remains open during the entire processing of the information sent by the agents.
+	 */
 	public void CloseFile() {
 		try {
 			endTest = System.currentTimeMillis();

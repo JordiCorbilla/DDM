@@ -59,6 +59,11 @@ import ddm.agents.ManagerAgent;
 import ddm.logging.ShowMessage;
 import jade.core.behaviours.OneShotBehaviour;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Create a defined agent on the fly when the system is running.
+ */
 @SuppressWarnings("serial")
 public class CreateDefinedAgentBehaviour extends OneShotBehaviour {
 

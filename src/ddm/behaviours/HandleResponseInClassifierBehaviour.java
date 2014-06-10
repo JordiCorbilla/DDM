@@ -16,6 +16,12 @@ import ddm.ontology.Arff_Training_Repository;
 import ddm.ontology.ClassifierOntology;
 import ddm.ontology.TrainingResult;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * behaviour to handle the response from the classifier. Once the training details are back,
+ * the classifier needs to train the system.
+ */
 @SuppressWarnings("serial")
 public class HandleResponseInClassifierBehaviour extends OneShotBehaviour {
     private ACLMessage request;

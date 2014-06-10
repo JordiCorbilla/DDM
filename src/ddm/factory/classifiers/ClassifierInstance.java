@@ -28,6 +28,12 @@
 
 package ddm.factory.classifiers;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Abstract instance of a classifier.
+ * This class defines a generic class that will contain a Classifier algorithm.
+ */
 public abstract class ClassifierInstance {
 
 	private int correctIntances;
@@ -47,110 +53,220 @@ public abstract class ClassifierInstance {
 
 	}
 
+	/**
+	 * Method to train the classifier
+	 */
 	public abstract void TrainClassifier();
 
+	/**
+	 * Method to classify a particular instance
+	 */
 	public abstract void ClassifyInstances();
 
+	/**
+	 * Method that returns the type of algorithm used.
+	 * @return string
+	 */
 	public abstract String type();
 
+	/**
+	 * Number of correct instances that the classifier returns
+	 * @return int
+	 */
 	public int getCorrectIntances() {
 		return correctIntances;
 	}
 
+	/**
+	 * Set the number of correct instances
+	 * @param correctIntances
+	 */
 	public void setCorrectIntances(int correctIntances) {
 		this.correctIntances = correctIntances;
 	}
 
+	/**
+	 * DataSet size
+	 * @return int
+	 */
 	public int getDataSetSize() {
 		return dataSetSize;
 	}
 
+	/**
+	 * Set the DataSet size
+	 * @param testSetSize
+	 */
 	public void setDataSetSize(int testSetSize) {
 		this.dataSetSize = testSetSize;
 	}
 
+	/**
+	 * Get the training set size
+	 * @return int
+	 */
 	public int getTrainingSetSize() {
 		return trainingSetSize;
 	}
 
+	/**
+	 * Set training set size
+	 * @param trainingSetSize
+	 */
 	public void setTrainingSetSize(int trainingSetSize) {
 		this.trainingSetSize = trainingSetSize;
 	}
 
+	/**
+	 * Percentage of the data
+	 * @return double
+	 */
 	public double getPercentage() {
 		return percentage;
 	}
 
+	/**
+	 * Set the percentage of the data
+	 * @param percentage
+	 */
 	public void setPercentage(double percentage) {
 		this.percentage = percentage;
 	}
 
+	/**
+	 * Duration in ms of the execution of the classification
+	 * @return
+	 */
 	public long getDurationTimeMs() {
 		return durationTimeMs;
 	}
-
+	
+	/**
+	 * Set the time of the execution for the classification
+	 * @param durationTimeMs
+	 */
 	public void setDurationTimeMs(long durationTimeMs) {
 		this.durationTimeMs = durationTimeMs;
 	}
 
+	/**
+	 * Get the training data file
+	 * @return string
+	 */
 	public String getTrainingDataFile() {
 		return TrainingDataFile;
 	}
 
+	/**
+	 * Set the training data file
+	 * @param trainingDataFile
+	 */
 	public void setTrainingDataFile(String trainingDataFile) {
 		TrainingDataFile = trainingDataFile;
 	}
 
+	/**
+	 * Get the data file
+	 * @return string
+	 */
 	public String getDataFile() {
 		return DataFile;
 	}
 
+	/**
+	 * Set the data file
+	 * @param dataFile
+	 */	
 	public void setDataFile(String dataFile) {
 		DataFile = dataFile;
 	}
 
+	/**
+	 * Get the duration of the training in ms
+	 * @return
+	 */
 	public long getDurationTrainingTimeMs() {
 		return durationTrainingTimeMs;
 	}
 
+	/**
+	 * Set the duration of the training in ms
+	 * @param durationTrainingTimeMs
+	 */
 	public void setDurationTrainingTimeMs(long durationTrainingTimeMs) {
 		this.durationTrainingTimeMs = durationTrainingTimeMs;
 	}
 
+	/**
+	 * Get an additional value formatted string for the percentage to be stored in the file or displayed.
+	 * @return String
+	 */
 	public String percentageFormatted() {
 		java.text.DecimalFormat percentageFormatter = new java.text.DecimalFormat(
 				"#0.00");
 		return percentageFormatter.format(this.percentage);
 	}
 
+	/**
+	 * Get the value of the processed instance from weka
+	 * @return String
+	 */
 	public String getInstanceValue() {
 		return instanceValue;
 	}
 
+	/**
+	 * Set the value of the instance returned from weka
+	 * @param instanceValue
+	 */
 	public void setInstanceValue(String instanceValue) {
 		this.instanceValue = instanceValue;
 	}
 
+	/**
+	 * Get the value of the classification for the particular instance
+	 * @return
+	 */
 	public double getInstanceClassification() {
 		return InstanceClassification;
 	}
 
+	/**
+	 * Set the value for the classification instance
+	 * @param instanceClassification
+	 */
 	public void setInstanceClassification(double instanceClassification) {
 		InstanceClassification = instanceClassification;
 	}
 
+	/**
+	 * Get the value for the predicted class from weka
+	 * @return
+	 */
 	public double getInstancePredictedClass() {
 		return InstancePredictedClass;
 	}
 
+	/**
+	 * Set the value for the predicted class from weka
+	 * @param instancePredictedClass
+	 */
 	public void setInstancePredictedClass(double instancePredictedClass) {
 		InstancePredictedClass = instancePredictedClass;
 	}
 
+	/**
+	 * Get predicted instance image from weka
+	 * @return
+	 */
 	public String getPredictedInstanceValue() {
 		return predictedInstanceValue;
 	}
 
+	/**
+	 * Set the predicted instance image from weka
+	 * @param predictedInstanceValue
+	 */
 	public void setPredictedInstanceValue(String predictedInstanceValue) {
 		this.predictedInstanceValue = predictedInstanceValue;
 	}

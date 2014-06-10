@@ -42,6 +42,12 @@ import ddm.ontology.ClassificationResult;
 import ddm.ontology.ClassifierOntology;
 import ddm.ontology.DataInstance;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Behaviour to handle the data the classifier needs to process.
+ * Once the agent has processed the data, it sends the result back to the manager.
+ */
 @SuppressWarnings("serial")
 public class HandleDataToClassifyBehaviour extends OneShotBehaviour {
 

@@ -27,7 +27,13 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 package ddm.decision;
-
+/**
+ * 
+ * @author jordi Corbilla
+ * Range class that defines a max and min.
+ * As the range is usually an integer value, the range defines +0.5 and -0.5 of the original value
+ * and the system works out the location of the number according to the boundaries of the range.
+ */
 public class Range {
 
 	private double min;

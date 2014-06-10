@@ -36,6 +36,11 @@ import org.junit.Test;
 
 import ddm.utils.DataUtils;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Test that the numbers are correctly generated
+ */
 public class TestDataUtils {
 
 	@Before

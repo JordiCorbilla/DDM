@@ -30,14 +30,18 @@ package ddm.utils;
 
 import java.net.UnknownHostException;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Network util class
+ */
 public class NetworkUtils {
 	public static String getHostName() {
 		String hostName = "";
 		try {
 			hostName = java.net.InetAddress.getLocalHost().getHostName();
 		} catch (UnknownHostException ex) {
-			// Logger.getLogger(JadePlatform.class.getName()).log(Level.SEVERE,
-			// null, ex);
+			//throw ex;
 		}
 		return hostName;
 	}

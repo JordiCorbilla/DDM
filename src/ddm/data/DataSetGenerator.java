@@ -36,8 +36,20 @@ import java.io.FileWriter;
 
 import ddm.ontology.DataInstance;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * This class generates a file from a particular DataSet.
+ * 
+ */
 public class DataSetGenerator {
 	
+	/**
+	 * Generates a bespoke file for a classifier
+	 * @param localName
+	 * @param header
+	 * @param rows
+	 */
 	public static void GenerateFileForClassifier(String localName, List header, List rows) {
 		BufferedWriter bw = null;
 		try {
@@ -65,6 +77,12 @@ public class DataSetGenerator {
         }	
 	}
 	
+	/**
+	 * Generates a bespoke file for a classifier from a DataSet
+	 * @param localName
+	 * @param header
+	 * @param dataInstance
+	 */
 	public static void GenerateDataFileForClassifier(String localName, List header, DataInstance dataInstance) {
 		BufferedWriter bw = null;
 		try {

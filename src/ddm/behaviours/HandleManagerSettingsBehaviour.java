@@ -43,6 +43,12 @@ import ddm.ontology.ClassifierOntology;
 import ddm.ontology.ClassifierSettings;
 import ddm.ontology.ManagerSettings;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Behaviour to handle the settings the manager sends to the classifier.
+ * Once the agent has processed the data, it sends the response back to the manager.
+ */
 @SuppressWarnings("serial")
 public class HandleManagerSettingsBehaviour extends OneShotBehaviour {
 

@@ -35,7 +35,8 @@ import ddm.utils.NetworkUtils;
 
 /**
  * 
- * @author jordi coll Class helper to display the message in the correct format
+ * @author jordi Corbilla
+ * Class helper to display the message in the correct format
  *         in the command line
  */
 
@@ -47,6 +48,13 @@ public class ShowMessage {
 	private boolean logging;
 	static Logger log;
 
+	/**
+	 * ShowMessage constructor adding the following parameters
+	 * @param description
+	 * @param localName
+	 * @param verbosity
+	 * @param logging
+	 */
 	public ShowMessage(String description, String localName, boolean verbosity,
 			boolean logging) {
 		this.localName = localName;
@@ -57,6 +65,10 @@ public class ShowMessage {
 			log = Logger.getLogger("DDM");
 	}
 
+	/**
+	 * Log method that displays the values on the screen according to verbosity and logging parameters
+	 * @param message
+	 */
 	public void Log(String message) {
 		Date date = new Date();
 		SimpleDateFormat ft = new SimpleDateFormat("MMMM dd, yyyy h:mm:ss a");
@@ -71,18 +83,34 @@ public class ShowMessage {
 
 	}
 
+	/**
+	 * Local name of the agent
+	 * @return string
+	 */
 	public String getLocalName() {
 		return localName;
 	}
 
+	/**
+	 * Local description of the text to display
+	 * @return string
+	 */
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 * Is logging enabled?
+	 * @return boolean
+	 */
 	public boolean isLogging() {
 		return logging;
 	}
 
+	/**
+	 * Is verbosity enabled?
+	 * @return
+	 */
 	public boolean isVerbosity() {
 		return verbosity;
 	}

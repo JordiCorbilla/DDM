@@ -35,7 +35,8 @@ import ddm.ontology.ClassifierSettings;
 
 /***
  * 
- * @author jordi coll Given a data set, percentage of training and number of
+ * @author jordi corbilla 
+ * Given a data set, percentage of training and number of
  *         classifiers this class will generate the partition list for the Data
  *         set manager
  * 

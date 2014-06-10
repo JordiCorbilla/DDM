@@ -56,7 +56,8 @@ import jade.util.leap.List;
 
 /**
  * 
- * @author jordi coll ClassifierAgent class. This class generates the agent
+ * @author jordi Corbilla
+ * ClassifierAgent class. This class generates the agent
  *         wrapper that deals with the requests from the manager and classifies
  *         the data according to the configuration section.
  */
@@ -83,7 +84,7 @@ public class ClassifierAgent extends Agent {
 				conf.getMaximumPercentageTraining());
 		this.classifier = ClassifierInstanceFactory.giveMeAClassifier();
 		sm.Log("Default Classifier choosen by agent: " + classifier.type());
-		sm.Log("Perentage of training data the agent will use: "
+		sm.Log("Percentage of training data that the agent will use: "
 				+ this.percentageTrainingData);
 		// ------------------------
 		// Register language and ontology
@@ -91,12 +92,20 @@ public class ClassifierAgent extends Agent {
 		getContentManager().registerOntology(ontology);
 
 		SequentialBehaviour sb = new SequentialBehaviour();
+		sm.Log("Register with Directory Facilitator");
 		sb.addSubBehaviour(new RegisterInDFBehaviour(this, sm,
 				"Classifier Agent", "Man0001"));
 		addBehaviour(sb);
+		sm.Log("Messaging service installed with agent " + getLocalName());
 		addBehaviour(new ReceiveMessages(this));
 	}
 
+	/**
+	 * @author jordi coll
+	 * Class that is used when the messaging service is installed
+	 * to process all the messages from the manager
+	 *
+	 */
 	class ReceiveMessages extends CyclicBehaviour {
 		private ClassifierAgent myAgent;
 
@@ -143,53 +152,97 @@ public class ClassifierAgent extends Agent {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Get percentage of data destined to training
+	 * @return percentageTrainingData
 	 */
 	public int getPercentageTrainingData() {
 		return percentageTrainingData;
 	}
 
+	/**
+	 * Get Show message module for logging purposes
+	 * @return ShowMessage
+	 */
 	public ShowMessage getSM() {
 		return sm;
 	}
 
+	/**
+	 * Get configuration variable for the agent
+	 * @return Configuration
+	 */
 	public ClassifierConfiguration getConfiguration() {
 		return conf;
 	}
 
+	/**
+	 * Set the amount of training data
+	 * @param percentageTrainingData
+	 */
 	public void setPercentageTrainingData(int percentageTrainingData) {
 		this.percentageTrainingData = percentageTrainingData;
 	}
 
+	/**
+	 * Get the classifier instance that the factory will instantiate
+	 * @return ClassifierInstance
+	 */
 	public ClassifierInstance getClassifier() {
 		return classifier;
 	}
 
+	/**
+	 * Set the type of classifier
+	 * @param classifier
+	 */
 	public void setClassifier(ClassifierInstance classifier) {
 		this.classifier = classifier;
 	}
 
+	/**
+	 * Get ARFF file header
+	 * @return List
+	 */
 	public List getHeader() {
 		return header;
 	}
 
+	/**
+	 * Set the ARFF header
+	 * @param header
+	 */
 	public void setHeader(List header) {
 		this.header = header;
 	}
 
+	/**
+	 * Get training size
+	 * @return training
+	 */
 	public int getTrainingSize() {
 		return TrainingSize;
 	}
 
+	/**
+	 * Set training size
+	 * @param trainingSize
+	 */
 	public void setTrainingSize(int trainingSize) {
 		TrainingSize = trainingSize;
 	}
 
+	/**
+	 * Get AID server value used by Jade
+	 * @return AID
+	 */
 	public AID getServer() {
 		return server;
 	}
 
+	/**
+	 * Set AID value used by Jade
+	 * @param server
+	 */
 	public void setServer(AID server) {
 		this.server = server;
 	}

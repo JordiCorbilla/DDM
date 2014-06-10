@@ -42,6 +42,11 @@ import ddm.logging.ShowMessage;
 import ddm.ontology.ClassifierOntology;
 import ddm.ontology.ManagerSettings;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Behaviour that handles the sending of the configuration to the classifier.
+ */
 @SuppressWarnings("serial")
 public class SendConfigurationToClassifierBehaviour extends OneShotBehaviour {
 

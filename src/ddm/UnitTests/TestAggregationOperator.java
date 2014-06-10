@@ -8,6 +8,11 @@ import org.junit.Test;
 
 import ddm.decision.AggregationOperator;
 
+/**
+ * 
+ * @author jordi Corbilla
+ * Test that the OWA operator works fine
+ */
 public class TestAggregationOperator {
 
 	@Before
