@@ -1,0 +1,1 @@
+%JADE_HOME%\lib\jade.jar;%JADE_HOME%\lib\common-codec\common-codec-1.3.jar;C:\Users\jordi coll\workspace\TFG-DistributedDecisionJade\bin\tfg\testing;%JADE_HOME%\classes;C:\Desk\weka\weka-3-7-10\weka-stable-3.6.6.jar;C:\Users\jordi coll\workspace\TFG-DistributedDecisionJade\bin\tfg\agents;

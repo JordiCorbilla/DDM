@@ -31,48 +31,39 @@ package ddm.decision;
 import java.util.ArrayList;
 
 public class DecisionRange {
-	
+
 	private ArrayList<Range> listRange = null;
-	
-	public DecisionRange()
-	{
+
+	public DecisionRange() {
 		listRange = new ArrayList<Range>();
 	}
-	
-	
-	private boolean exists(Range range)
-	{
+
+	private boolean exists(Range range) {
 		boolean found = false;
 		int i = 0;
-		while (!found && i < listRange.size())
-		{
+		while (!found && i < listRange.size()) {
 			found = range.getImage().equals(listRange.get(i).getImage());
 			i++;
 		}
 		return found;
 	}
-	
-	public void AddItem(String image, double value)
-	{
+
+	public void AddItem(String image, double value) {
 		double min = 0.0;
 		double max = 0.0;
-		if (value == 1.0)
-			min = 0.0;
-		else
-			min = value - 0.5;
+		min = value - 0.5;
 		max = value + 0.5;
-		Range r = new Range(image, min, max);
+		Range r = new Range(image, value, min, max);
 		if (!exists(r))
 			listRange.add(r);
 	}
-	
-	public String testValue(double value){
+
+	public String testValue(double value) {
 		boolean found = false;
-		int i=0;
+		int i = 0;
 		String image = "";
 		Range r = null;
-		while (!found && i<listRange.size())
-		{
+		while (!found && i < listRange.size()) {
 			r = listRange.get(i);
 			found = r.isInRange(value);
 			i++;
@@ -80,5 +71,15 @@ public class DecisionRange {
 		if (found)
 			image = r.getImage();
 		return image;
+	}
+
+	public String ToString() {
+		String s = "";
+		for (int i = 0; i < listRange.size(); i++) {
+			s = s + "Image: " + listRange.get(i).getImage()
+					+ " associated value: " + listRange.get(i).getValue()
+					+ "\r\n";
+		}
+		return s;
 	}
 }

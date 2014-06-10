@@ -31,15 +31,14 @@ package ddm.utils;
 import java.net.UnknownHostException;
 
 public class NetworkUtils {
-	   public static String getHostName ()
-	    {
-	        String hostName = "";
-	        try{
-	            hostName = java.net.InetAddress.getLocalHost().getHostName();
-	        } catch (UnknownHostException ex)
-	        {
-	            //Logger.getLogger(JadePlatform.class.getName()).log(Level.SEVERE, null, ex);
-	        }
-	        return hostName; 
-	    }	
+	public static String getHostName() {
+		String hostName = "";
+		try {
+			hostName = java.net.InetAddress.getLocalHost().getHostName();
+		} catch (UnknownHostException ex) {
+			// Logger.getLogger(JadePlatform.class.getName()).log(Level.SEVERE,
+			// null, ex);
+		}
+		return hostName;
+	}
 }

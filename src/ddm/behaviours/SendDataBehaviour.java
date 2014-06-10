@@ -45,6 +45,7 @@ import jade.lang.acl.MessageTemplate;
 import ddm.agents.ManagerAgent;
 import ddm.data.DatasetManager;
 import ddm.decision.DecisionMaker;
+import ddm.decision.DecisionType;
 import ddm.jade.JadeAgents;
 import ddm.logging.ShowMessage;
 import ddm.ontology.ClassificationResult;
@@ -134,6 +135,7 @@ public class SendDataBehaviour extends Behaviour {
 			}
 			break;
 		case 2:
+			int number = myAgent.getNumberOfAgents() + 1;
 			//Receive all the proposals from every agent
 			ACLMessage reply = myAgent.receive(mt);
 			if (reply != null) {
@@ -154,9 +156,9 @@ public class SendDataBehaviour extends Behaviour {
 						+ " Pred:" + cr.getInstancePredictedValue() + " Value:" + cr.getPredictedInstanceValue());
 						repliesCnt++;
 						decisionResult.put(cr.getName(), cr);
-						if (repliesCnt >= (4*myAgent.getNumberOfAgents()) && (index < DataSize))
+						if (repliesCnt >= (number*myAgent.getNumberOfAgents()) && (index < DataSize))
 						{
-							decisionMaker.Make(dataToPredict, decisionResult, TrainingSize);
+							decisionMaker.Make(DecisionType.OrderedWeightedAggregation, dataToPredict, decisionResult, TrainingSize);
 							step = 1;
 							try {
 								Thread.sleep(1000);
@@ -165,7 +167,7 @@ public class SendDataBehaviour extends Behaviour {
 							}
 							System.out.println("GOING TO STEP 1");
 						}
-						else if (repliesCnt >= (4*myAgent.getNumberOfAgents()) && (index == DataSize))
+						else if (repliesCnt >= (number*myAgent.getNumberOfAgents()) && (index == DataSize))
 						{
 							System.out.println("GOING TO STEP 3");
 							try {

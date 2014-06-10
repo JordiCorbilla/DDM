@@ -41,7 +41,7 @@ public class ThreeStepsBehaviour extends Behaviour {
 
 	public ThreeStepsBehaviour(ManagerAgent a) {
 		super(a);
-		myAgent = a;		
+		myAgent = a;
 		this.sm = a.getSM();
 	}
 
@@ -53,11 +53,12 @@ public class ThreeStepsBehaviour extends Behaviour {
 			step = 2;
 			break;
 		case 2:
-			//myAgent.addBehaviour(new SendConfigurationToClassifierBehaviour(myAgent));
+			// myAgent.addBehaviour(new
+			// SendConfigurationToClassifierBehaviour(myAgent));
 			step = 3;
 			break;
 		case 3:
-			//myAgent.addBehaviour(new WaitUserCommandBehaviour(myAgent));
+			// myAgent.addBehaviour(new WaitUserCommandBehaviour(myAgent));
 			step = 4;
 			break;
 		}

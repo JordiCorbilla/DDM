@@ -39,16 +39,17 @@ import jade.core.behaviours.OneShotBehaviour;
 public class ListClassifiersBehaviour extends OneShotBehaviour {
 
 	private ManagerAgent myAgent;
-	
+
 	public ListClassifiersBehaviour(ManagerAgent a) {
 		super(a);
 		myAgent = a;
-	}	
-	
+	}
+
 	@Override
 	public void action() {
 		System.out.println("\n\nListing Classifiers Online:");
-		jade.util.leap.List Classifiers = JadeAgents.SearchAgents(myAgent, "Classifier Agent", null);
+		jade.util.leap.List Classifiers = JadeAgents.SearchAgents(myAgent,
+				"Classifier Agent", null);
 		@SuppressWarnings("rawtypes")
 		Iterator classifiers = Classifiers.iterator();
 
@@ -60,14 +61,14 @@ public class ListClassifiersBehaviour extends OneShotBehaviour {
 			i++;
 			System.out.println("  " + i + "- " + classifiers.next().toString());
 		}
-		
+
 		System.out.println("\n\n");
 		System.out.println("Settings:");
-		HashMap<String, ClassifierSettings> settings = myAgent.getClassifierSettings();
-		for (int j=1; j<= settings.size(); j++)
-		{
-			String details = settings.get("Classifier"+j).toString();
-			System.out.println("\t"+details);
+		HashMap<String, ClassifierSettings> settings = myAgent
+				.getClassifierSettings();
+		for (int j = 1; j <= settings.size(); j++) {
+			String details = settings.get("Classifier" + j).toString();
+			System.out.println("\t" + details);
 		}
 
 		System.out.println("Number of Classifiers online: " + i);

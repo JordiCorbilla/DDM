@@ -45,29 +45,29 @@ public class TestDatasetManager {
 
 	private ManagerConfiguration conf = null;
 	private HashMap<String, ClassifierSettings> ClassifierSettings = new HashMap<String, ClassifierSettings>();
-	
+
 	@Before
 	public void setUp() throws Exception {
 		ClassifierSettings cs1 = new ClassifierSettings();
 		cs1.setName("Classifier1");
 		cs1.setClassifierModule("J48");
 		cs1.setPercentageTrainingData(78);
-		
+
 		ClassifierSettings.put("Classifier1", cs1);
-		
+
 		ClassifierSettings cs2 = new ClassifierSettings();
 		cs2.setName("Classifier2");
 		cs2.setClassifierModule("J48");
 		cs2.setPercentageTrainingData(56);
-		
-		ClassifierSettings.put("Classifier2", cs2);		
-		
+
+		ClassifierSettings.put("Classifier2", cs2);
+
 		ClassifierSettings cs3 = new ClassifierSettings();
 		cs3.setName("Classifier3");
 		cs3.setClassifierModule("J48");
 		cs3.setPercentageTrainingData(65);
-		
-		ClassifierSettings.put("Classifier3", cs3);			
+
+		ClassifierSettings.put("Classifier3", cs3);
 		conf = ManagerConfiguration.getInstance();
 	}
 
@@ -77,58 +77,89 @@ public class TestDatasetManager {
 
 	@Test
 	public void testGetDatasets() {
-		DatasetManager datasetManager = new DatasetManager(conf, ClassifierSettings, 3);
-		
+		DatasetManager datasetManager = new DatasetManager(conf,
+				ClassifierSettings, 3);
+
 		PartitionList partitionList = datasetManager.getPartitionList();
-		
-		System.out.println("Number of partitions " + partitionList.NumberOfPartitions());
-		System.out.println("Training Size "+ partitionList.getTrainingSize());
-		
-		System.out.println("Partition 0 (class1) " + partitionList.getPartitions().get(0));
-		System.out.println("Partition 1 (class2)" + partitionList.getPartitions().get(1));
-		System.out.println("Partition 2 (class3)" + partitionList.getPartitions().get(2));
-		System.out.println("Partition 3 (data) " + partitionList.getPartitions().get(3));
-		
-		System.out.println("Data index start " + partitionList.getPartitionMap().get(3).getStartIndex());
-		System.out.println("Data index end " + partitionList.getPartitionMap().get(3).getEndIndex());
-		
-		assertTrue(partitionList.NumberOfPartitions()==4);
-		assertTrue(partitionList.getTrainingSize()==70);
-		
-		//We are expecting 3 chunks of training data with 78, 56 and 65% of the total of training data.
-		//Training size should be:
-		
-		assertTrue(partitionList.getPartitions().get(0)==54); //70 * 0.78 = 54
-		assertTrue(partitionList.getPartitions().get(1)==39); //70 * 0.56 = 39
-		assertTrue(partitionList.getPartitions().get(2)==45); //70 * 0.65 = 45
-	
-		//This partition is only for DATA
-		assertTrue(partitionList.getPartitionMap().get(3).getStartIndex()==70);
-		assertTrue(partitionList.getPartitionMap().get(3).getEndIndex()==99);	
-	
-		System.out.println("Dataset data size " + datasetManager.getDatasetsData().size());
-		System.out.println("Partition 3 " + partitionList.getPartitions().get(3));
-		
-		assertTrue(datasetManager.getDatasetsData().size()==partitionList.getPartitions().get(3)-1);
-		assertTrue(datasetManager.getDatasetsTraining().size()==3);
-		
-		System.out.println("Header size " + datasetManager.getArffFile().HeaderSize());
-		System.out.println("Header size (Class1) " + datasetManager.getDatasetsTraining().get(0).getHeader().size());
-		System.out.println("Header size (Class2) " + datasetManager.getDatasetsTraining().get(1).getHeader().size());
-		System.out.println("Header size (Class3) " + datasetManager.getDatasetsTraining().get(2).getHeader().size());
-		
-		System.out.println("Data size (Class1) " + datasetManager.getDatasetsTraining().get(0).getData().size());
-		System.out.println("Data size (Class2) " + datasetManager.getDatasetsTraining().get(1).getData().size());
-		System.out.println("Data size (Class3) " + datasetManager.getDatasetsTraining().get(2).getData().size());
-		
-		assertTrue(datasetManager.getDatasetsTraining().get(0).getHeader().size()==datasetManager.getArffFile().HeaderSize());
-		assertTrue(datasetManager.getDatasetsTraining().get(0).getData().size()==partitionList.getPartitions().get(0)-1);
-		
-		assertTrue(datasetManager.getDatasetsTraining().get(1).getHeader().size()==datasetManager.getArffFile().HeaderSize());
-		assertTrue(datasetManager.getDatasetsTraining().get(1).getData().size()==partitionList.getPartitions().get(1)-1);
-		
-		assertTrue(datasetManager.getDatasetsTraining().get(2).getHeader().size()==datasetManager.getArffFile().HeaderSize());
-		assertTrue(datasetManager.getDatasetsTraining().get(2).getData().size()==partitionList.getPartitions().get(2)-1);
+
+		System.out.println("Number of partitions "
+				+ partitionList.NumberOfPartitions());
+		System.out.println("Training Size " + partitionList.getTrainingSize());
+
+		System.out.println("Partition 0 (class1) "
+				+ partitionList.getPartitions().get(0));
+		System.out.println("Partition 1 (class2)"
+				+ partitionList.getPartitions().get(1));
+		System.out.println("Partition 2 (class3)"
+				+ partitionList.getPartitions().get(2));
+		System.out.println("Partition 3 (data) "
+				+ partitionList.getPartitions().get(3));
+
+		System.out.println("Data index start "
+				+ partitionList.getPartitionMap().get(3).getStartIndex());
+		System.out.println("Data index end "
+				+ partitionList.getPartitionMap().get(3).getEndIndex());
+
+		assertTrue(partitionList.NumberOfPartitions() == 4);
+		assertTrue(partitionList.getTrainingSize() == 70);
+
+		// We are expecting 3 chunks of training data with 78, 56 and 65% of the
+		// total of training data.
+		// Training size should be:
+
+		assertTrue(partitionList.getPartitions().get(0) == 55); // 70 * 0.78 =
+																// 54.6
+		assertTrue(partitionList.getPartitions().get(1) == 39); // 70 * 0.56 =
+																// 39.2
+		assertTrue(partitionList.getPartitions().get(2) == 46); // 70 * 0.65 =
+																// 45.5
+
+		// This partition is only for DATA
+		assertTrue(partitionList.getPartitionMap().get(3).getStartIndex() == 70);
+		assertTrue(partitionList.getPartitionMap().get(3).getEndIndex() == 99);
+
+		System.out.println("Dataset data size "
+				+ datasetManager.getDatasetsData().size());
+		System.out.println("Partition 3 "
+				+ partitionList.getPartitions().get(3));
+
+		assertTrue(datasetManager.getDatasetsData().size() == partitionList
+				.getPartitions().get(3) - 1);
+		assertTrue(datasetManager.getDatasetsTraining().size() == 3);
+
+		System.out.println("Header size "
+				+ datasetManager.getArffFile().HeaderSize());
+		System.out.println("Header size (Class1) "
+				+ datasetManager.getDatasetsTraining().get(0).getHeader()
+						.size());
+		System.out.println("Header size (Class2) "
+				+ datasetManager.getDatasetsTraining().get(1).getHeader()
+						.size());
+		System.out.println("Header size (Class3) "
+				+ datasetManager.getDatasetsTraining().get(2).getHeader()
+						.size());
+
+		System.out.println("Data size (Class1) "
+				+ datasetManager.getDatasetsTraining().get(0).getData().size());
+		System.out.println("Data size (Class2) "
+				+ datasetManager.getDatasetsTraining().get(1).getData().size());
+		System.out.println("Data size (Class3) "
+				+ datasetManager.getDatasetsTraining().get(2).getData().size());
+
+		assertTrue(datasetManager.getDatasetsTraining().get(0).getHeader()
+				.size() == datasetManager.getArffFile().HeaderSize());
+		assertTrue(datasetManager.getDatasetsTraining().get(0).getData().size() == partitionList
+				.getPartitions().get(0) - 1);
+
+		assertTrue(datasetManager.getDatasetsTraining().get(1).getHeader()
+				.size() == datasetManager.getArffFile().HeaderSize());
+		assertTrue(datasetManager.getDatasetsTraining().get(1).getData().size() == partitionList
+				.getPartitions().get(1) - 1);
+
+		assertTrue(datasetManager.getDatasetsTraining().get(2).getHeader()
+				.size() == datasetManager.getArffFile().HeaderSize());
+		assertTrue(datasetManager.getDatasetsTraining().get(2).getData().size() == partitionList
+				.getPartitions().get(2) - 1);
 	}
 
 }

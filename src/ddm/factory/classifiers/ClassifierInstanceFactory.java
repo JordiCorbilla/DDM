@@ -49,8 +49,8 @@ public class ClassifierInstanceFactory {
 		}
 		return classifier;
 	}
-	
-	public static ClassifierInstance giveMeAClassifier(){
+
+	public static ClassifierInstance giveMeAClassifier() {
 		Random randomGenerator = new Random();
 		int randomInt = randomGenerator.nextInt(2);
 		ClassifierInstance classifier = null;

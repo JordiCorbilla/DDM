@@ -42,29 +42,29 @@ import ddm.ontology.ClassifierSettings;
 public class TestPartitions {
 
 	private HashMap<String, ClassifierSettings> ClassifierSettings = new HashMap<String, ClassifierSettings>();
-	
+
 	@Before
 	public void setUp() throws Exception {
 		ClassifierSettings cs1 = new ClassifierSettings();
 		cs1.setName("Classifier1");
 		cs1.setClassifierModule("J48");
 		cs1.setPercentageTrainingData(78);
-		
+
 		ClassifierSettings.put("Classifier1", cs1);
-		
+
 		ClassifierSettings cs2 = new ClassifierSettings();
 		cs2.setName("Classifier2");
 		cs2.setClassifierModule("J48");
 		cs2.setPercentageTrainingData(56);
-		
-		ClassifierSettings.put("Classifier2", cs2);		
-		
+
+		ClassifierSettings.put("Classifier2", cs2);
+
 		ClassifierSettings cs3 = new ClassifierSettings();
 		cs3.setName("Classifier3");
 		cs3.setClassifierModule("J48");
 		cs3.setPercentageTrainingData(65);
-		
-		ClassifierSettings.put("Classifier3", cs3);			
+
+		ClassifierSettings.put("Classifier3", cs3);
 	}
 
 	@After
@@ -73,38 +73,54 @@ public class TestPartitions {
 
 	@Test
 	public void testGetPartitionsNotDistributedEvenly() {
-		PartitionList partitionList = new PartitionList(73, 70, ClassifierSettings, 3);
-		assertTrue(partitionList.NumberOfPartitions()==4);
-		assertTrue(partitionList.getTrainingSize()==51);
-		
-		//We are expecting 3 chunks of training data with 78, 56 and 65% of the total of training data.
-		//Training size should be:
-		
-		assertTrue(partitionList.getPartitions().get(0)==39); //51 * 0.78 = 39
-		assertTrue(partitionList.getPartitions().get(1)==28); //51 * 0.56 = 28
-		assertTrue(partitionList.getPartitions().get(2)==33); //51 * 0.65 = 33
-	
-		//This partition is only for DATA
-		assertTrue(partitionList.getPartitionMap().get(3).getStartIndex()==51);
-		assertTrue(partitionList.getPartitionMap().get(3).getEndIndex()==72);		
+		PartitionList partitionList = new PartitionList(73, 70,
+				ClassifierSettings, 3);
+		System.out.println(partitionList.NumberOfPartitions());
+		assertTrue(partitionList.NumberOfPartitions() == 4);
+		System.out.println(partitionList.getTrainingSize());
+		assertTrue(partitionList.getTrainingSize() == 51);
+
+		// We are expecting 3 chunks of training data with 78, 56 and 65% of the
+		// total of training data.
+		// Training size should be:
+		System.out.println(partitionList.getPartitions().get(0));
+		System.out.println(partitionList.getPartitions().get(1));
+		System.out.println(partitionList.getPartitions().get(2));
+		assertTrue(partitionList.getPartitions().get(0) == 40); // 51 * 0.78 =
+																// 39.78
+		assertTrue(partitionList.getPartitions().get(1) == 29); // 51 * 0.56 =
+																// 28.56
+		assertTrue(partitionList.getPartitions().get(2) == 33); // 51 * 0.65 =
+																// 33.15
+
+		// This partition is only for DATA
+		assertTrue(partitionList.getPartitionMap().get(3).getStartIndex() == 51);
+		assertTrue(partitionList.getPartitionMap().get(3).getEndIndex() == 72);
 	}
 
-	@Test	
+	@Test
 	public void testGetPartitionsDistributedEvenly() {
-		PartitionList partitionList = new PartitionList(100, 70, ClassifierSettings, 3);
-		assertTrue(partitionList.NumberOfPartitions()==4);
-		assertTrue(partitionList.getTrainingSize()==70);
-		
-		//We are expecting 3 chunks of training data with 78, 56 and 65% of the total of training data.
-		//Training size should be:
-		
-		assertTrue(partitionList.getPartitions().get(0)==54); //70 * 0.78 = 54
-		assertTrue(partitionList.getPartitions().get(1)==39); //70 * 0.56 = 39
-		assertTrue(partitionList.getPartitions().get(2)==45); //70 * 0.65 = 45
-	
-		//This partition is only for DATA
-		assertTrue(partitionList.getPartitionMap().get(3).getStartIndex()==70);
-		assertTrue(partitionList.getPartitionMap().get(3).getEndIndex()==99);	
-	}		
+		PartitionList partitionList = new PartitionList(100, 70,
+				ClassifierSettings, 3);
+		assertTrue(partitionList.NumberOfPartitions() == 4);
+		assertTrue(partitionList.getTrainingSize() == 70);
+
+		// We are expecting 3 chunks of training data with 78, 56 and 65% of the
+		// total of training data.
+		// Training size should be:
+		System.out.println(partitionList.getPartitions().get(0));
+		System.out.println(partitionList.getPartitions().get(1));
+		System.out.println(partitionList.getPartitions().get(2));
+		assertTrue(partitionList.getPartitions().get(0) == 55); // 70 * 0.78 =
+																// 54.6
+		assertTrue(partitionList.getPartitions().get(1) == 39); // 70 * 0.56 =
+																// 39.2
+		assertTrue(partitionList.getPartitions().get(2) == 46); // 70 * 0.65 =
+																// 45.5
+
+		// This partition is only for DATA
+		assertTrue(partitionList.getPartitionMap().get(3).getStartIndex() == 70);
+		assertTrue(partitionList.getPartitionMap().get(3).getEndIndex() == 99);
+	}
 
 }

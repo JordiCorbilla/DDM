@@ -33,18 +33,19 @@ public class Range {
 	private double min;
 	private double max;
 	private String image;
-	
-	public Range(String image, double min, double max) {
+	private double value;
+
+	public Range(String image, double value, double min, double max) {
 		setMin(min);
 		setMax(max);
+		setValue(value);
 		setImage(image);
 	}
 
-	public boolean isInRange(double value)
-	{
-		return (value >= getMin() && value < getMax());
+	public boolean isInRange(double value) {
+		return (value > getMin() && value <= getMax());
 	}
-	
+
 	public double getMin() {
 		return min;
 	}
@@ -68,5 +69,13 @@ public class Range {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
+
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
+		this.value = value;
+	}
+
 }

@@ -32,10 +32,11 @@ import jade.content.AgentAction;
 import jade.util.leap.List;
 
 /**
-* Protege name: Arff_Repository
-* @author ontology bean generator
-* @version 2014/04/15, 22:56:31
-*/
+ * Protege name: Arff_Repository
+ * 
+ * @author ontology bean generator
+ * @version 2014/04/15, 22:56:31
+ */
 
 @SuppressWarnings("serial")
 public class Arff_Training_Repository implements AgentAction {
@@ -46,24 +47,24 @@ public class Arff_Training_Repository implements AgentAction {
 	public String getName() {
 		return this.name;
 	}
-	
+
 	public List getHeader() {
 		return this.header;
-	}	
-	
+	}
+
 	public List getData() {
 		return this.data;
-	}		
+	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public void setHeader(List header) {
 		this.header = header;
-	}	
-	
+	}
+
 	public void setData(List data) {
 		this.data = data;
-	}		
+	}
 }

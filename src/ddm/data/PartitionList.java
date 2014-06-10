@@ -35,9 +35,9 @@ import ddm.ontology.ClassifierSettings;
 
 /***
  * 
- * @author jordi coll 
- * Given a data set, percentage of training and number of classifiers
- * this class will generate the partition list for the Data set manager
+ * @author jordi coll Given a data set, percentage of training and number of
+ *         classifiers this class will generate the partition list for the Data
+ *         set manager
  * 
  */
 
@@ -47,47 +47,49 @@ public class PartitionList implements java.io.Serializable {
 	private int dataSize;
 	private ArrayList<Integer> partitions;
 	private ArrayList<PartitionMap> partitionMap;
-	
-	public PartitionList(int DataSize, int PercentageData, HashMap<String, ClassifierSettings> ClassifierSettings, int NumberClassifiers)
-	{
+
+	public PartitionList(int DataSize, int PercentageData,
+			HashMap<String, ClassifierSettings> ClassifierSettings,
+			int NumberClassifiers) {
 		partitions = new ArrayList<Integer>();
 		partitionMap = new ArrayList<PartitionMap>();
-		CalculatePartitions(DataSize, PercentageData, ClassifierSettings, NumberClassifiers);
+		CalculatePartitions(DataSize, PercentageData, ClassifierSettings,
+				NumberClassifiers);
 		CalculatePartitionMap();
 	}
 
-	private void CalculatePartitions(int DataSize, int PercentageData, HashMap<String, ClassifierSettings> ClassifierSettings, int NumberClassifiers)
-	{
-		//Get the basic chunk of data destined for training
-		float percentage = PercentageData / (float)100;
-		this.trainingSize = (int)((float)DataSize * percentage);
+	private void CalculatePartitions(int DataSize, int PercentageData,
+			HashMap<String, ClassifierSettings> ClassifierSettings,
+			int NumberClassifiers) {
+		// Get the basic chunk of data destined for training
+		float percentage = PercentageData / (float) 100;
+		this.trainingSize = (int) ((float) DataSize * percentage);
 
 		this.dataSize = DataSize;
-		
+
 		int newTrainingSize = getTrainingSize();
-		
-		for (int i=1; i<= NumberClassifiers; i++)
-		{
-			int percentageClassifier = ClassifierSettings.get("Classifier" + i).getPercentageTrainingData();
-			float percentageClass = percentageClassifier / (float)100;
-			int sizeTrainingClassifier = (int)((float)newTrainingSize * percentageClass);
+
+		for (int i = 1; i <= NumberClassifiers; i++) {
+			int percentageClassifier = ClassifierSettings.get("Classifier" + i)
+					.getPercentageTrainingData();
+			float percentageClass = percentageClassifier / (float) 100;
+			int sizeTrainingClassifier = (int) (Math
+					.round((float) newTrainingSize * percentageClass));
 			partitions.add(sizeTrainingClassifier);
 		}
-		partitions.add(getDataSize()-getTrainingSize());
+		partitions.add(getDataSize() - getTrainingSize());
 	}
-	
-	private void CalculatePartitionMap()
-	{
-		for (int i=0;i<NumberOfPartitions()-1;i++)
-		{
-			partitionMap.add(new PartitionMap(0, partitions.get(i)-1));
+
+	private void CalculatePartitionMap() {
+		for (int i = 0; i < NumberOfPartitions() - 1; i++) {
+			partitionMap.add(new PartitionMap(0, partitions.get(i) - 1));
 		}
-		
+
 		int startIndex = getTrainingSize();
-		int endIndex = getDataSize()-1;
+		int endIndex = getDataSize() - 1;
 		partitionMap.add(new PartitionMap(startIndex, endIndex));
 	}
-	
+
 	public ArrayList<Integer> getPartitions() {
 		return partitions;
 	}
@@ -95,26 +97,24 @@ public class PartitionList implements java.io.Serializable {
 	public int getTrainingSize() {
 		return trainingSize;
 	}
-	
+
 	public int getDataSize() {
 		return dataSize;
-	}	
-	
-	public int NumberOfPartitions(){
+	}
+
+	public int NumberOfPartitions() {
 		return partitions.size();
 	}
 
 	public ArrayList<PartitionMap> getPartitionMap() {
 		return partitionMap;
 	}
-	
-	public int GetStartIndex(int index)
-	{
+
+	public int GetStartIndex(int index) {
 		return getPartitionMap().get(index).getStartIndex();
 	}
-	
-	public int GetEndIndex(int index)
-	{
+
+	public int GetEndIndex(int index) {
 		return getPartitionMap().get(index).getEndIndex();
-	}	
+	}
 }

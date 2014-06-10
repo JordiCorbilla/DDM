@@ -56,11 +56,11 @@ public class TestConfiguration {
 		System.out.println(conf.getNumberOfClassifiers());
 		System.out.println(conf.getPercentageTrainingData());
 		System.out.println(conf.getClassifierModule().get("Classifier1"));
-		assertTrue(conf.getArffDataSetLocation()!="");
+		assertTrue(conf.getArffDataSetLocation() != "");
 		assertTrue(!conf.getClassifierModule().isEmpty());
 		assertTrue(conf.getClassifierModule().get("Classifier1").equals("J48"));
-		assertTrue(conf.getNumberOfClassifiers()>0);
-		assertTrue(conf.getPercentageTrainingData()>0);
+		assertTrue(conf.getNumberOfClassifiers() > 0);
+		assertTrue(conf.getPercentageTrainingData() > 0);
 	}
 
 	@Test
@@ -69,7 +69,7 @@ public class TestConfiguration {
 		ClassifierConfiguration conf = ClassifierConfiguration.getInstance();
 		System.out.println(conf.getMinimumPercentageTraining());
 		System.out.println(conf.getMaximumPercentageTraining());
-		assertTrue(conf.getMinimumPercentageTraining()>0);
-		assertTrue(conf.getMaximumPercentageTraining()>0);
-	}	
+		assertTrue(conf.getMinimumPercentageTraining() > 0);
+		assertTrue(conf.getMaximumPercentageTraining() > 0);
+	}
 }

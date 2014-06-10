@@ -46,18 +46,19 @@ public class WaitUserCommandBehaviour extends OneShotBehaviour {
 	static final int CreateDefinedAgents = 2;
 	static final int SendTrainingDataToClassifiers = 3;
 	static final int SendDataToClassifiers = 4;
-	static final int CreateNewAgent = 5;	
-	static final int SendConfigurationToClassifiers = 6;	
+	static final int CreateNewAgent = 5;
+	static final int SendConfigurationToClassifiers = 6;
 	private ShowMessage sm;
-	
+
 	private int command = WAIT;
 	private ManagerAgent myAgent;
+
 	// Get the user command
 	public WaitUserCommandBehaviour(ManagerAgent a) {
 		super(a);
 		myAgent = a;
 		this.sm = a.getSM();
-		command = WAIT;		
+		command = WAIT;
 	}
 
 	public void action() {
@@ -88,7 +89,8 @@ public class WaitUserCommandBehaviour extends OneShotBehaviour {
 			myAgent.addBehaviour(new WaitUserCommandBehaviour(myAgent));
 			break;
 		case SendConfigurationToClassifiers:
-			myAgent.addBehaviour(new SendConfigurationToClassifierBehaviour(myAgent));
+			myAgent.addBehaviour(new SendConfigurationToClassifierBehaviour(
+					myAgent));
 			break;
 		default:
 			System.out.println("Invalid choice!");
@@ -96,7 +98,7 @@ public class WaitUserCommandBehaviour extends OneShotBehaviour {
 			break;
 		}
 	}
-	
+
 	int getUserChoice() {
 		System.out
 				.print("\n    <<****** Distributed decision-making system ******>>"
@@ -119,6 +121,6 @@ public class WaitUserCommandBehaviour extends OneShotBehaviour {
 			ex.printStackTrace();
 		}
 		return WAIT;
-	}	
-	
+	}
+
 }

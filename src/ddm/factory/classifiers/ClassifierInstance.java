@@ -29,7 +29,7 @@
 package ddm.factory.classifiers;
 
 public abstract class ClassifierInstance {
-	
+
 	private int correctIntances;
 	private int dataSetSize;
 	private int trainingSetSize;
@@ -42,15 +42,15 @@ public abstract class ClassifierInstance {
 	private String predictedInstanceValue;
 	private double InstanceClassification;
 	private double InstancePredictedClass;
-	
+
 	public ClassifierInstance() {
-		
+
 	}
-	
+
 	public abstract void TrainClassifier();
-	
+
 	public abstract void ClassifyInstances();
-	
+
 	public abstract String type();
 
 	public int getCorrectIntances() {
@@ -116,9 +116,10 @@ public abstract class ClassifierInstance {
 	public void setDurationTrainingTimeMs(long durationTrainingTimeMs) {
 		this.durationTrainingTimeMs = durationTrainingTimeMs;
 	}
-	
-	public String percentageFormatted(){
-		java.text.DecimalFormat percentageFormatter = new java.text.DecimalFormat("#0.00");	
+
+	public String percentageFormatted() {
+		java.text.DecimalFormat percentageFormatter = new java.text.DecimalFormat(
+				"#0.00");
 		return percentageFormatter.format(this.percentage);
 	}
 

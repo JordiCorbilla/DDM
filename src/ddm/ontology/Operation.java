@@ -31,33 +31,38 @@ package ddm.ontology;
 import jade.content.*;
 
 /**
-* Protege name: Operation
-* @author ontology bean generator
-* @version 2014/04/15, 22:56:31
-*/
+ * Protege name: Operation
+ * 
+ * @author ontology bean generator
+ * @version 2014/04/15, 22:56:31
+ */
 @SuppressWarnings("serial")
 public class Operation implements Concept {
 
-   /**
-* Protege name: num_train_data
-   */
-   private int num_train_data;
-   public void setNum_train_data(int value) { 
-    this.num_train_data=value;
-   }
-   public int getNum_train_data() {
-     return this.num_train_data;
-   }
+	/**
+	 * Protege name: num_train_data
+	 */
+	private int num_train_data;
 
-   /**
-* Protege name: num_test_data
-   */
-   private int num_test_data;
-   public void setNum_test_data(int value) { 
-    this.num_test_data=value;
-   }
-   public int getNum_test_data() {
-     return this.num_test_data;
-   }
+	public void setNum_train_data(int value) {
+		this.num_train_data = value;
+	}
+
+	public int getNum_train_data() {
+		return this.num_train_data;
+	}
+
+	/**
+	 * Protege name: num_test_data
+	 */
+	private int num_test_data;
+
+	public void setNum_test_data(int value) {
+		this.num_test_data = value;
+	}
+
+	public int getNum_test_data() {
+		return this.num_test_data;
+	}
 
 }

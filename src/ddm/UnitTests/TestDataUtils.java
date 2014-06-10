@@ -48,11 +48,10 @@ public class TestDataUtils {
 
 	@Test
 	public void testRandomNumber() {
-		for (int i=0;i<20;i++)
-		{
+		for (int i = 0; i < 20; i++) {
 			int value = DataUtils.RandomNumber(30, 40);
-			System.out.println("Value: " + value );
-			assertTrue(value >=30 && value<=40);
+			System.out.println("Value: " + value);
+			assertTrue(value >= 30 && value <= 40);
 		}
 	}
 

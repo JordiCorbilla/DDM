@@ -40,7 +40,8 @@ import java.util.Iterator;
 
 public class JadeAgents {
 
-	public static jade.util.leap.List SearchAgents(Agent a, String type, String name) {
+	public static jade.util.leap.List SearchAgents(Agent a, String type,
+			String name) {
 		jade.util.leap.List results = new jade.util.leap.ArrayList();
 		DFAgentDescription dfd = new DFAgentDescription();
 		ServiceDescription sd = new ServiceDescription();
@@ -74,6 +75,6 @@ public class JadeAgents {
 			System.out.println("ERROR: " + e.toString());
 		}
 		return results;
-	}	
-	
+	}
+
 }

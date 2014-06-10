@@ -51,228 +51,264 @@ public class TestClassifierFactory {
 	@Test
 	public void testJ48Classifier() {
 		System.out.println("*****************Testing J48Classifier\n");
-		ClassifierInstance instance = ClassifierInstanceFactory.buildClassifier(ClassifierType.J48DecisionTree);
+		ClassifierInstance instance = ClassifierInstanceFactory
+				.buildClassifier(ClassifierType.J48DecisionTree);
 		instance.setTrainingDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierTraining_repository.arff");
 		instance.TrainClassifier();
-		System.out.println("Training time duration: " + instance.getDurationTrainingTimeMs() + "ms");
+		System.out.println("Training time duration: "
+				+ instance.getDurationTrainingTimeMs() + "ms");
 		System.out.println("Training size: " + instance.getTrainingSetSize());
-		assertTrue(instance.getTrainingSetSize()==20);
+		assertTrue(instance.getTrainingSetSize() == 20);
 
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository1.arff");		
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository1.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 1");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);	
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository2.arff");		
+		assertTrue(instance.getPercentage() == 100.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository2.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 2");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);		
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository3.arff");		
+		assertTrue(instance.getPercentage() == 100.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository3.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 3");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);		
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository4.arff");		
+		assertTrue(instance.getPercentage() == 100.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository4.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 4");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==0);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 0);
 		assertTrue(instance.getInstanceValue().equals("O"));
-		assertTrue(instance.getPercentage()==0.00);		
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository5.arff");		
+		assertTrue(instance.getPercentage() == 0.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository5.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 5");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);		
+		assertTrue(instance.getPercentage() == 100.00);
 	}
-	
+
 	@Test
 	public void testMLPClassifier() {
 		System.out.println("*****************Testing MLPClassifier\n");
-		ClassifierInstance instance = ClassifierInstanceFactory.buildClassifier(ClassifierType.NeuronalNetwork);
+		ClassifierInstance instance = ClassifierInstanceFactory
+				.buildClassifier(ClassifierType.NeuronalNetwork);
 		instance.setTrainingDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierTraining_repository.arff");
 		instance.TrainClassifier();
-		System.out.println("Training time duration: " + instance.getDurationTrainingTimeMs() + "ms");
+		System.out.println("Training time duration: "
+				+ instance.getDurationTrainingTimeMs() + "ms");
 		System.out.println("Training size: " + instance.getTrainingSetSize());
-		assertTrue(instance.getTrainingSetSize()==20);
+		assertTrue(instance.getTrainingSetSize() == 20);
 
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository1.arff");		
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository1.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 1");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);	
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository2.arff");		
+		assertTrue(instance.getPercentage() == 100.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository2.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 2");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);		
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository3.arff");		
+		assertTrue(instance.getPercentage() == 100.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository3.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 3");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);		
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository4.arff");		
+		assertTrue(instance.getPercentage() == 100.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository4.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 4");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==0);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 0);
 		assertTrue(instance.getInstanceValue().equals("O"));
-		assertTrue(instance.getPercentage()==0.00);		
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository5.arff");		
+		assertTrue(instance.getPercentage() == 0.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository5.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 5");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);		
-	}	
-	
+		assertTrue(instance.getPercentage() == 100.00);
+	}
+
 	@Test
 	public void testIBKClassifier() {
 		System.out.println("*****************Testing MLPClassifier\n");
-		ClassifierInstance instance = ClassifierInstanceFactory.buildClassifier(ClassifierType.KNearestNeighbour);
+		ClassifierInstance instance = ClassifierInstanceFactory
+				.buildClassifier(ClassifierType.KNearestNeighbour);
 		instance.setTrainingDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierTraining_repository.arff");
 		instance.TrainClassifier();
-		System.out.println("Training time duration: " + instance.getDurationTrainingTimeMs() + "ms");
+		System.out.println("Training time duration: "
+				+ instance.getDurationTrainingTimeMs() + "ms");
 		System.out.println("Training size: " + instance.getTrainingSetSize());
-		assertTrue(instance.getTrainingSetSize()==20);
+		assertTrue(instance.getTrainingSetSize() == 20);
 
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository1.arff");		
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository1.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 1");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);	
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository2.arff");		
+		assertTrue(instance.getPercentage() == 100.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository2.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 2");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);		
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository3.arff");		
+		assertTrue(instance.getPercentage() == 100.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository3.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 3");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);		
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository4.arff");		
+		assertTrue(instance.getPercentage() == 100.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository4.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 4");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==0);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 0);
 		assertTrue(instance.getInstanceValue().equals("O"));
-		assertTrue(instance.getPercentage()==0.00);		
-		
-		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository5.arff");		
+		assertTrue(instance.getPercentage() == 0.00);
+
+		instance.setDataFile("C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/src/ddm/IntegrationTests/ClassifierData_repository5.arff");
 		instance.ClassifyInstances();
 		System.out.println("\nTest 5");
-		System.out.println("Classification duration: " + instance.getDurationTimeMs() + "ms");
+		System.out.println("Classification duration: "
+				+ instance.getDurationTimeMs() + "ms");
 		System.out.println("Data size: " + instance.getDataSetSize());
 		System.out.println("Correct : " + instance.getCorrectIntances());
-		System.out.println("Correct Percentage: " + instance.percentageFormatted());
+		System.out.println("Correct Percentage: "
+				+ instance.percentageFormatted());
 		System.out.println("Intance value: " + instance.getInstanceValue());
-		assertTrue(instance.getDataSetSize()==1);
-		assertTrue(instance.getCorrectIntances()==1);
+		assertTrue(instance.getDataSetSize() == 1);
+		assertTrue(instance.getCorrectIntances() == 1);
 		assertTrue(instance.getInstanceValue().equals("N"));
-		assertTrue(instance.getPercentage()==100.00);		
-	}	
+		assertTrue(instance.getPercentage() == 100.00);
+	}
 }

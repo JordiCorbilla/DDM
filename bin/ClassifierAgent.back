@@ -1,0 +1,9 @@
+#Classifier Properties
+ApplicationPath=C:/Users/jordi coll/workspace/TFG-DistributedDecisionJade/bin/
+#Minimum and Maximum percentage of the data to use as a training
+MinimumPercentageTraining=100
+MaximumPercentageTraining=100
+#Verbosity true/false if we want the tool to add extra information on the screen
+Verbosity=true
+#Logging true/false to enable logging using log4j
+Logging=true

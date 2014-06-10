@@ -1,43 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.5" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="true" nesting-relationships="true">  
-  <class id="1" language="java" name="ddm.ontology.Csv_Repository" project="TFG-DistributedDecisionJade" 
-    file="/TFG-DistributedDecisionJade/src/ddm/ontology/Csv_Repository.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="129" y="171"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="ddm.ontology.Arff_Training_Repository" project="TFG-DistributedDecisionJade" 
+  <class id="1" language="java" name="ddm.ontology.Arff_Training_Repository" project="TFG-DistributedDecisionJade" 
     file="/TFG-DistributedDecisionJade/src/ddm/ontology/Arff_Training_Repository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="294" y="164"/>    
+    <position height="243" width="165" x="578" y="878"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="ddm.ontology.Operation" project="TFG-DistributedDecisionJade" 
+  <class id="2" language="java" name="ddm.ontology.ClassificationResult" project="TFG-DistributedDecisionJade" 
+    file="/TFG-DistributedDecisionJade/src/ddm/ontology/ClassificationResult.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="621" width="217" x="783" y="878"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="ddm.ontology.ClassifierOntology" project="TFG-DistributedDecisionJade" 
+    file="/TFG-DistributedDecisionJade/src/ddm/ontology/ClassifierOntology.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="801" width="323" x="578" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="ddm.ontology.ClassifierSettings" project="TFG-DistributedDecisionJade" 
+    file="/TFG-DistributedDecisionJade/src/ddm/ontology/ClassifierSettings.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="198" x="1259" y="878"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="ddm.ontology.DataInstance" project="TFG-DistributedDecisionJade" 
+    file="/TFG-DistributedDecisionJade/src/ddm/ontology/DataInstance.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="127" x="411" y="878"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="ddm.ontology.ManagerSettings" project="TFG-DistributedDecisionJade" 
+    file="/TFG-DistributedDecisionJade/src/ddm/ontology/ManagerSettings.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="179" x="1040" y="878"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="ddm.ontology.Operation" project="TFG-DistributedDecisionJade" 
     file="/TFG-DistributedDecisionJade/src/ddm/ontology/Operation.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="121" y="406"/>    
+    <position height="189" width="158" x="213" y="878"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="ddm.agents.ManagerAgent" project="TFG-DistributedDecisionJade" 
-    file="/TFG-DistributedDecisionJade/src/ddm/agents/ManagerAgent.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="675" width="238" x="700" y="-177"/>    
+  <class id="8" language="java" name="ddm.ontology.TrainingResult" project="TFG-DistributedDecisionJade" 
+    file="/TFG-DistributedDecisionJade/src/ddm/ontology/TrainingResult.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="132" x="41" y="878"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
+  <dependency id="9">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="10">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="11">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="12">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="13">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="14">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

@@ -60,29 +60,32 @@ import ddm.logging.ShowMessage;
 import jade.core.behaviours.OneShotBehaviour;
 
 @SuppressWarnings("serial")
-public class CreateDefinedAgentBehaviour  extends OneShotBehaviour {
+public class CreateDefinedAgentBehaviour extends OneShotBehaviour {
 
 	private ShowMessage sm;
 	private ManagerAgent myAgent;
+
 	public CreateDefinedAgentBehaviour(ManagerAgent a) {
 		super(a);
-		myAgent  = a;
-		this.sm = a.getSM();	
-	}	
+		myAgent = a;
+		this.sm = a.getSM();
+	}
 
 	@Override
 	public void action() {
 		sm.Log("CreateDefinedAgentBehaviour - start");
 		if (!myAgent.isCreateDefinedAgents()) {
-			int numAgentsToCreate = myAgent.getConfiguration().getNumberOfClassifiers();
+			int numAgentsToCreate = myAgent.getConfiguration()
+					.getNumberOfClassifiers();
 			for (int i = 0; i < numAgentsToCreate; i++) {
 				myAgent.addBehaviour(new CreateAgentBehaviour(myAgent));
 			}
 			myAgent.setCreateDefinedAgents(true);
-			//List the classifiers to give time to the nodes to be ready online
+			// List the classifiers to give time to the nodes to be ready online
 			myAgent.addBehaviour(new ListClassifiersBehaviour(myAgent));
-			//Send the configuration to each classifier
-			myAgent.addBehaviour(new SendConfigurationToClassifierBehaviour(myAgent));
+			// Send the configuration to each classifier
+			myAgent.addBehaviour(new SendConfigurationToClassifierBehaviour(
+					myAgent));
 		} else
 			System.out.println("Agents are already created.");
 		sm.Log("CreateDefinedAgentBehaviour - end");

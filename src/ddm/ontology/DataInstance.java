@@ -31,10 +31,11 @@ package ddm.ontology;
 import jade.content.AgentAction;
 
 /**
-* Protege name: Arff_Repository
-* @author ontology bean generator
-* @version 2014/04/15, 22:56:31
-*/
+ * Protege name: Arff_Repository
+ * 
+ * @author ontology bean generator
+ * @version 2014/04/15, 22:56:31
+ */
 
 @SuppressWarnings("serial")
 public class DataInstance implements AgentAction {
@@ -43,8 +44,12 @@ public class DataInstance implements AgentAction {
 	public String getValue() {
 		return this.value;
 	}
-	
+
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	public String toString() {
+		return this.value;
 	}
 }

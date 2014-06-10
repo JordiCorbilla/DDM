@@ -58,10 +58,10 @@ public class ClassifierSettings implements AgentAction {
 
 	public void setPercentageTrainingData(int percentageTrainingData) {
 		PercentageTrainingData = percentageTrainingData;
-	}	
-	
-	public String toString()
-	{
-		return "Agent: " + getName() + " Classifier: " + getClassifierModule() + " Percentage: " + getPercentageTrainingData();
-	} 
+	}
+
+	public String toString() {
+		return "Agent: " + getName() + " Classifier: " + getClassifierModule()
+				+ " Percentage: " + getPercentageTrainingData();
+	}
 }

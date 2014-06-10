@@ -1,0 +1,4 @@
+Season,Age,disease,Accident,Intervention,High fever,alcohol,smoking,sitting,output
+-0.33,0.75,1,1,1,1,0.8,1,0.25,N
+-1,0.67,1,0,0,0,1,-1,0.5,N
+-0.33,0.56,1,0,0,0,1,-1,0.63,N

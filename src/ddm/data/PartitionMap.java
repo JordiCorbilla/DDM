@@ -30,8 +30,7 @@ package ddm.data;
 
 /***
  * 
- * @author jordi coll 
- * This class keeps the details of the partition map
+ * @author jordi coll This class keeps the details of the partition map
  * 
  */
 
@@ -40,9 +39,8 @@ public class PartitionMap implements java.io.Serializable {
 
 	private int startIndex;
 	private int endIndex;
-	
-	public PartitionMap(int startIndex, int endIndex)
-	{
+
+	public PartitionMap(int startIndex, int endIndex) {
 		setStartIndex(startIndex);
 		setEndIndex(endIndex);
 	}

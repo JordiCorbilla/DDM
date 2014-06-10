@@ -30,16 +30,14 @@ package ddm.utils;
 
 import java.util.Random;
 
-
 public class DataUtils {
 
-	public static int RandomNumber(int minRange, int maxRange)
-	{
+	public static int RandomNumber(int minRange, int maxRange) {
 		Random randomGenerator = new Random();
-		//get the range, casting to long to avoid overflow problems
-	    long range = (long)maxRange - (long)minRange + 1;
-	    // compute a fraction of the range, 0 <= fraction < range
-	    long fraction = (long)(range * randomGenerator.nextDouble());
-	    return (int)(fraction + minRange);    
+		// get the range, casting to long to avoid overflow problems
+		long range = (long) maxRange - (long) minRange + 1;
+		// compute a fraction of the range, 0 <= fraction < range
+		long fraction = (long) (range * randomGenerator.nextDouble());
+		return (int) (fraction + minRange);
 	}
 }

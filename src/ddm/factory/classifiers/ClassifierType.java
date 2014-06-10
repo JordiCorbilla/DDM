@@ -30,10 +30,10 @@ package ddm.factory.classifiers;
 
 public enum ClassifierType {
 	J48DecisionTree, KNearestNeighbour, NeuronalNetwork;
-	
-	public static ClassifierType GetType(String type){
+
+	public static ClassifierType GetType(String type) {
 		ClassifierType ct = null;
-		switch (type){
+		switch (type) {
 		case "J48":
 			ct = J48DecisionTree;
 			break;
@@ -42,7 +42,7 @@ public enum ClassifierType {
 			break;
 		case "MLP":
 			ct = NeuronalNetwork;
-			break;	
+			break;
 		}
 		return ct;
 	}

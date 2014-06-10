@@ -66,7 +66,8 @@ public class ManagerAgent extends Agent {
 	protected void setup() {
 		mainContainerController = null;
 		conf = ManagerConfiguration.getInstance();
-		sm = new ShowMessage("Manager Agent", getLocalName(), conf.getVerbosity(), conf.getLogging());
+		sm = new ShowMessage("Manager Agent", getLocalName(),
+				conf.getVerbosity(), conf.getLogging());
 		sm.Log("Starting Agent");
 		// Read Properties file
 		sm.Log("Reading configuration file");
@@ -80,7 +81,8 @@ public class ManagerAgent extends Agent {
 		// Set this agent main behaviour
 		sm.Log("Setting up behaviours");
 		SequentialBehaviour sb = new SequentialBehaviour();
-		sb.addSubBehaviour(new RegisterInDFBehaviour(this, sm, "Manager Agent", "Man0001"));
+		sb.addSubBehaviour(new RegisterInDFBehaviour(this, sm, "Manager Agent",
+				"Man0001"));
 		addBehaviour(sb);
 		addBehaviour(new WaitUserCommandBehaviour(this));
 
@@ -88,16 +90,13 @@ public class ManagerAgent extends Agent {
 	}
 
 	public void ConfigureDataSet() {
-		datasetManager = new DatasetManager(conf, ClassifierSettings, getNumberOfAgents());	
+		datasetManager = new DatasetManager(conf, ClassifierSettings,
+				getNumberOfAgents());
 	}
-	
+
 	class ReceiveResponse extends CyclicBehaviour {
-		// ----------------------------------------------- // Receive and handle
-		// server responses
-
-		// private boolean finished = false;
-
 		private ManagerAgent myAgent;
+
 		ReceiveResponse(ManagerAgent a) {
 			super(a);
 			myAgent = a;
@@ -107,8 +106,9 @@ public class ManagerAgent extends Agent {
 
 		private int count = 0;
 		private int count2 = 0;
-		
-		private MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.INFORM);
+
+		private MessageTemplate mt = MessageTemplate
+				.MatchPerformative(ACLMessage.INFORM);
 
 		private int step = 0;
 
@@ -131,30 +131,35 @@ public class ManagerAgent extends Agent {
 						}
 						Concept action = ((Action) content).getAction();
 						if (action instanceof ClassifierSettings) {
-							ClassifierSettings.put(msg.getSender().getLocalName(), (ClassifierSettings) action);
-							sm.Log("Classifier Settings received " + ((ClassifierSettings) action).toString());
-							System.out.println("Classifier Settings received " + ((ClassifierSettings) action).toString());
+							ClassifierSettings.put(msg.getSender()
+									.getLocalName(),
+									(ClassifierSettings) action);
+							sm.Log("Classifier Settings received "
+									+ ((ClassifierSettings) action).toString());
+							System.out.println("Classifier Settings received "
+									+ ((ClassifierSettings) action).toString());
 							count++;
 							try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {
 								e.printStackTrace();
 							}
-							if (count == (2*numberOfAgents))
+							if (count == (2 * numberOfAgents))
 								step = 1;
-						}
-						else if (action instanceof TrainingResult) {
+						} else if (action instanceof TrainingResult) {
 							TrainingResult tr = (TrainingResult) action;
-							System.out.println(tr.getName() + " " + tr.getType() + " " + tr.getDuration());
+							System.out.println("Name: " + tr.getName()
+									+ " Type: " + tr.getType() + " Duration: "
+									+ tr.getDuration() + "ms");
 							count2++;
 							try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {
 								e.printStackTrace();
 							}
-							if (count2 == (2*numberOfAgents))
+							if (count2 == (2 * numberOfAgents))
 								step = 1;
-						}						
+						}
 					}
 				}
 				break;
@@ -191,26 +196,25 @@ public class ManagerAgent extends Agent {
 	public void setDatasetManager(DatasetManager datasetManager) {
 		this.datasetManager = datasetManager;
 	}
-	
-	public ShowMessage getSM(){
+
+	public ShowMessage getSM() {
 		return sm;
 	}
-	
-	public ManagerConfiguration getConfiguration()
-	{
+
+	public ManagerConfiguration getConfiguration() {
 		return conf;
 	}
-	
-	public HashMap<String, ClassifierSettings> getClassifierSettings(){
+
+	public HashMap<String, ClassifierSettings> getClassifierSettings() {
 		return ClassifierSettings;
 	}
-	
-	public ContainerController getMainContainerController()
-	{
+
+	public ContainerController getMainContainerController() {
 		return mainContainerController;
 	}
-	
-	public void setMainContainerController(ContainerController mainContainerController){
+
+	public void setMainContainerController(
+			ContainerController mainContainerController) {
 		this.mainContainerController = mainContainerController;
 	}
 }

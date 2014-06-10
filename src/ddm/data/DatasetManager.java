@@ -51,55 +51,56 @@ public class DatasetManager implements java.io.Serializable {
 	private PartitionList partitionList;
 	private String arffFileName;
 
-	public DatasetManager(ManagerConfiguration conf, HashMap<String, ClassifierSettings> ClassifierSettings, int NumberClassifiers) {
+	public DatasetManager(ManagerConfiguration conf,
+			HashMap<String, ClassifierSettings> ClassifierSettings,
+			int NumberClassifiers) {
 		setArffFileName(conf.getArffDataSetLocation());
 		this.datasetsData = new ArrayList<DataInstance>();
-		this.datasetsTraining = new ArrayList<Arff_Training_Repository>(); 
+		this.datasetsTraining = new ArrayList<Arff_Training_Repository>();
 		this.arffFile = new ArffFile(conf.getArffDataSetLocation());
-		this.partitionList = new PartitionList(arffFile.DataSize(), conf.getPercentageTrainingData(), ClassifierSettings, NumberClassifiers);
+		this.partitionList = new PartitionList(arffFile.DataSize(),
+				conf.getPercentageTrainingData(), ClassifierSettings,
+				NumberClassifiers);
 		FillDatasets();
 	}
 
-	private void FillDatasets()
-	{
+	private void FillDatasets() {
 		int StartIndex = 0;
 		int EndIndex = 0;
-		for(int i=0; i< partitionList.NumberOfPartitions()-1; i++)
-		{
+		for (int i = 0; i < partitionList.NumberOfPartitions() - 1; i++) {
 			Arff_Training_Repository arffTraining = new Arff_Training_Repository();
 			arffTraining.setName(getArffFileName());
-			
+
 			jade.util.leap.List headerTraining = new jade.util.leap.ArrayList();
-			for(int j=0; j< arffFile.HeaderSize(); j++)
+			for (int j = 0; j < arffFile.HeaderSize(); j++)
 				headerTraining.add(arffFile.Header().get(j));
-			arffTraining.setHeader(headerTraining);			
-			
+			arffTraining.setHeader(headerTraining);
+
 			jade.util.leap.List training = new jade.util.leap.ArrayList();
 			StartIndex = partitionList.GetStartIndex(i);
 			EndIndex = partitionList.GetEndIndex(i);
-			for(int j=StartIndex; j< EndIndex; j++)
-				training.add(arffFile.Data().get(j));	
-			arffTraining.setData(training);			
-			datasetsTraining.add(arffTraining);			
+			for (int j = StartIndex; j < EndIndex; j++)
+				training.add(arffFile.Data().get(j));
+			arffTraining.setData(training);
+			datasetsTraining.add(arffTraining);
 		}
-		int j = partitionList.NumberOfPartitions()-1;
+		int j = partitionList.NumberOfPartitions() - 1;
 		StartIndex = partitionList.GetStartIndex(j);
 		EndIndex = partitionList.GetEndIndex(j);
-		for(int k=StartIndex; k< EndIndex; k++)
-		{
+		for (int k = StartIndex; k < EndIndex; k++) {
 			DataInstance dataInstance = new DataInstance();
 			dataInstance.setValue(arffFile.Data().get(k));
 			datasetsData.add(dataInstance);
 		}
 	}
-	
+
 	public ArrayList<DataInstance> getDatasetsData() {
 		return datasetsData;
 	}
-	
+
 	public ArrayList<Arff_Training_Repository> getDatasetsTraining() {
 		return datasetsTraining;
-	}	
+	}
 
 	public ArffFile getArffFile() {
 		return arffFile;

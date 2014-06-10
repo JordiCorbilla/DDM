@@ -51,26 +51,28 @@ public class SendTrainingDataBehaviour extends OneShotBehaviour {
 	private ShowMessage sm;
 	private Codec codec = new SLCodec();
 	private Ontology ontology = ClassifierOntology.getInstance();
-	
+
 	// Get the user command
 	public SendTrainingDataBehaviour(ManagerAgent a) {
 		super(a);
 		myAgent = a;
 		sm = a.getSM();
-	}	
-	
+	}
+
 	@Override
 	public void action() {
 		sm.Log("SendConfigurationToClassifiers - start");
 		sm.Log("Looking for agents online");
-		jade.util.leap.List Classifiers = JadeAgents.SearchAgents(myAgent, "Classifier Agent", null);
+		jade.util.leap.List Classifiers = JadeAgents.SearchAgents(myAgent,
+				"Classifier Agent", null);
 		sm.Log("Agents found: " + Classifiers.size());
 		Iterator<?> classifiers = Classifiers.iterator();
 
 		myAgent.ConfigureDataSet();
 		DatasetManager datasetManager = myAgent.getDatasetManager();
-		ArrayList<Arff_Training_Repository> datasetsTraining = datasetManager.getDatasetsTraining();
-		
+		ArrayList<Arff_Training_Repository> datasetsTraining = datasetManager
+				.getDatasetsTraining();
+
 		int i = 0;
 		while (classifiers.hasNext()) {
 			AID server = (AID) classifiers.next();
@@ -82,7 +84,8 @@ public class SendTrainingDataBehaviour extends OneShotBehaviour {
 			msg.setOntology(ontology.getName());
 			try {
 				Arff_Training_Repository arff = datasetsTraining.get(i);
-				myAgent.getContentManager().fillContent(msg, new Action(server, arff));
+				myAgent.getContentManager().fillContent(msg,
+						new Action(server, arff));
 				msg.addReceiver(server);
 				myAgent.send(msg);
 				i++;

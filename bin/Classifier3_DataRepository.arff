@@ -6,18 +6,13 @@
    %      (b) Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)
    %      (c) Date: July, 1988
    % 
-   @RELATION fertility
+   @RELATION iris
 
-   @ATTRIBUTE Season  NUMERIC
-   @ATTRIBUTE Age  NUMERIC
-   @ATTRIBUTE disease  NUMERIC
-   @ATTRIBUTE Accident  NUMERIC
-   @ATTRIBUTE Intervention  NUMERIC
-   @ATTRIBUTE Highfever  NUMERIC
-   @ATTRIBUTE alcohol  NUMERIC
-   @ATTRIBUTE smoking  NUMERIC
-   @ATTRIBUTE sitting  NUMERIC
-   @ATTRIBUTE output {N,O}
+   @ATTRIBUTE SepalLength  NUMERIC
+   @ATTRIBUTE SepalWidth  NUMERIC
+   @ATTRIBUTE PetalLength  NUMERIC
+   @ATTRIBUTE PetalWidth  NUMERIC
+   @ATTRIBUTE output {Iris-setosa, Iris-versicolor, Iris-virginica}
 
 @DATA
--1,0.53,1,1,1,0,0.8,1,0.5,N
+5.9,3.0,5.1,1.8,Iris-virginica

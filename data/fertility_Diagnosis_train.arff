@@ -1,10 +1,13 @@
 
- % 1. Title: Iris Plants Database
+ % Fertility Data Set 
    % 
-   % 2. Sources:
-   %      (a) Creator: R.A. Fisher
-   %      (b) Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)
-   %      (c) Date: July, 1988
+   % David Gil, 
+   % dgil '@' dtic.ua.es, 
+   % Lucentia Research Group, Department of Computer Technology, University of Alicante 
+   % 
+   % Jose Luis Girela, 
+   % girela '@' ua.es, 
+   % Department of Biotechnology, University of Alicante
    % 
    @RELATION fertility
 

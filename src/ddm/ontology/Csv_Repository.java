@@ -32,10 +32,11 @@ import jade.content.AgentAction;
 import jade.util.leap.List;
 
 /**
-* Protege name: Csv_Repository
-* @author ontology bean generator
-* @version 2014/04/15, 22:56:31
-*/
+ * Protege name: Csv_Repository
+ * 
+ * @author ontology bean generator
+ * @version 2014/04/15, 22:56:31
+ */
 
 @SuppressWarnings("serial")
 public class Csv_Repository implements AgentAction {
@@ -46,24 +47,24 @@ public class Csv_Repository implements AgentAction {
 	public String getName() {
 		return name;
 	}
-	
+
 	public List getRows() {
 		return rows;
-	}	
-	
+	}
+
 	public String getHeader() {
 		return header;
-	}	
+	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public void setRows(List rows) {
 		this.rows = rows;
 	}
-	
+
 	public void setHeader(String header) {
 		this.header = header;
-	}	
+	}
 }

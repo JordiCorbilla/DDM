@@ -36,63 +36,58 @@ import java.util.ArrayList;
 
 /***
  * 
- * @author jordi coll 
- * This class contains an ARFF file
+ * @author jordi coll This class contains an ARFF file
  * 
  */
 
 @SuppressWarnings("serial")
 public class ArffFile implements java.io.Serializable {
 	private ArrayList<String> data;
-	private ArrayList<String> header;	
-	
+	private ArrayList<String> header;
+
 	public ArffFile(String ArffFile) {
 		this.data = new ArrayList<String>();
 		this.header = new ArrayList<String>();
 		LoadFile(ArffFile);
 	}
-	
-	private void LoadFile(String ArrFile) {
-		   try(BufferedReader br = new BufferedReader(new FileReader(ArrFile))) {
-		        String line = br.readLine();
-		        int i = 0;
-		        while (line != null) {
-		        	if (i==0) 
-		        		header.add(line);
-		        	else
-		        		data.add(line);
-		        	
-		        	if (!line.contentEquals("@DATA") && i==0)
-		        		i = 0;
-		        	else
-		        		i = 1;
 
-		        	line = br.readLine();
-		        }
-		    } catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} 
+	private void LoadFile(String ArrFile) {
+		try (BufferedReader br = new BufferedReader(new FileReader(ArrFile))) {
+			String line = br.readLine();
+			int i = 0;
+			while (line != null) {
+				if (i == 0)
+					header.add(line);
+				else
+					data.add(line);
+
+				if (!line.contentEquals("@DATA") && i == 0)
+					i = 0;
+				else
+					i = 1;
+
+				line = br.readLine();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	
-	public ArrayList<String> Data()
-	{
+
+	public ArrayList<String> Data() {
 		return this.data;
 	}
-	
-	public ArrayList<String> Header()
-	{
+
+	public ArrayList<String> Header() {
 		return this.header;
 	}
-	
-	public int DataSize()
-	{
+
+	public int DataSize() {
 		return this.data.size();
 	}
-	
-	public int HeaderSize()
-	{
+
+	public int HeaderSize() {
 		return this.header.size();
 	}
 }

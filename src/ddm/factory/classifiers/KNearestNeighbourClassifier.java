@@ -30,21 +30,23 @@ package ddm.factory.classifiers;
 
 public class KNearestNeighbourClassifier extends ClassifierInstance {
 
-	private weka.classifiers.lazy.IBk  KNearestNeighbours;
-	
+	private weka.classifiers.lazy.IBk KNearestNeighbours;
+
 	@Override
 	public void TrainClassifier() {
-		//Load Training data
+		// Load Training data
 		weka.core.Instances trainingInstances = null;
 		try {
-			trainingInstances = new weka.core.Instances(new java.io.FileReader(getTrainingDataFile()));
+			trainingInstances = new weka.core.Instances(new java.io.FileReader(
+					getTrainingDataFile()));
 		} catch (Exception e1) {
 			e1.printStackTrace();
-		} 
+		}
 
 		if (trainingInstances.classIndex() == -1)
-			trainingInstances.setClassIndex(trainingInstances.numAttributes()-1);		
-		
+			trainingInstances
+					.setClassIndex(trainingInstances.numAttributes() - 1);
+
 		setTrainingSetSize(trainingInstances.numInstances());
 		long startTimeMillis = System.currentTimeMillis();
 
@@ -54,54 +56,56 @@ public class KNearestNeighbourClassifier extends ClassifierInstance {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		long finishTimeMillis = System.currentTimeMillis();
-		setDurationTrainingTimeMs(finishTimeMillis - startTimeMillis);		
-	}	
-	
+		setDurationTrainingTimeMs(finishTimeMillis - startTimeMillis);
+	}
+
 	@Override
 	public void ClassifyInstances() {
-		//Load data to classify
+		// Load data to classify
 		weka.core.Instances dataInstances = null;
 		try {
-			dataInstances = new weka.core.Instances(new java.io.FileReader(getDataFile()));
+			dataInstances = new weka.core.Instances(new java.io.FileReader(
+					getDataFile()));
 		} catch (Exception e1) {
 			e1.printStackTrace();
-		} 
-		
+		}
+
 		if (dataInstances.classIndex() == -1)
-			dataInstances.setClassIndex(dataInstances.numAttributes()-1);		
-		
-		setInstanceValue(dataInstances.firstInstance().stringValue(dataInstances.numAttributes()-1));
-		
+			dataInstances.setClassIndex(dataInstances.numAttributes() - 1);
+
+		setInstanceValue(dataInstances.firstInstance().stringValue(
+				dataInstances.numAttributes() - 1));
+
 		setDataSetSize(dataInstances.numInstances());
-		long startTimeMillis = System.currentTimeMillis();		
-		
-		int numCorrect = 0;			
-		
-		for (int i = 0; i < getDataSetSize(); i++)
-		{
+		long startTimeMillis = System.currentTimeMillis();
+
+		int numCorrect = 0;
+
+		for (int i = 0; i < getDataSetSize(); i++) {
 			weka.core.Instance currentInst = dataInstances.instance(i);
-			
+
 			double predictedClass = 0;
 			try {
-				predictedClass = getKNearestNeighbours().classifyInstance(currentInst);
+				predictedClass = getKNearestNeighbours().classifyInstance(
+						currentInst);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
+
 			setInstanceClassification(dataInstances.instance(i).classValue());
 			setInstancePredictedClass(predictedClass);
-			setPredictedInstanceValue(dataInstances.classAttribute().value((int)predictedClass));
-			if (predictedClass == dataInstances.instance(i).classValue())
-			{
+			setPredictedInstanceValue(dataInstances.classAttribute().value(
+					(int) predictedClass));
+			if (predictedClass == dataInstances.instance(i).classValue()) {
 				numCorrect++;
 			}
 		}
 
 		long finishTimeMillis = System.currentTimeMillis();
 		setDurationTimeMs(finishTimeMillis - startTimeMillis);
-		setPercentage((double)numCorrect / (double)getDataSetSize() * 100.0);
+		setPercentage((double) numCorrect / (double) getDataSetSize() * 100.0);
 		setCorrectIntances(numCorrect);
 	}
 
@@ -109,7 +113,8 @@ public class KNearestNeighbourClassifier extends ClassifierInstance {
 		return KNearestNeighbours;
 	}
 
-	public void setKNearestNeighbours(weka.classifiers.lazy.IBk KNearestNeighbours) {
+	public void setKNearestNeighbours(
+			weka.classifiers.lazy.IBk KNearestNeighbours) {
 		this.KNearestNeighbours = KNearestNeighbours;
 	}
 

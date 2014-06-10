@@ -35,20 +35,20 @@ import ddm.utils.NetworkUtils;
 
 /**
  * 
- * @author jordi coll
- * Class helper to display the message in the correct format in the command line
+ * @author jordi coll Class helper to display the message in the correct format
+ *         in the command line
  */
 
 public class ShowMessage {
-	
+
 	private String localName;
 	private String description;
 	private boolean verbosity;
 	private boolean logging;
 	static Logger log;
-	
-	public ShowMessage(String description, String localName, boolean verbosity, boolean logging)
-	{
+
+	public ShowMessage(String description, String localName, boolean verbosity,
+			boolean logging) {
 		this.localName = localName;
 		this.description = description;
 		this.verbosity = verbosity;
@@ -56,16 +56,19 @@ public class ShowMessage {
 		if (this.logging)
 			log = Logger.getLogger("DDM");
 	}
-	
-	public void Log(String message) 
-	{
+
+	public void Log(String message) {
 		Date date = new Date();
-		SimpleDateFormat ft = new SimpleDateFormat ("MMMM dd, yyyy h:mm:ss a");
+		SimpleDateFormat ft = new SimpleDateFormat("MMMM dd, yyyy h:mm:ss a");
 		if (isVerbosity())
-			System.out.println(ft.format(date) + " " + getDescription() + " " + NetworkUtils.getHostName() + " " + getLocalName() + ": " + message);
+			System.out.println(ft.format(date) + " " + getDescription() + " "
+					+ NetworkUtils.getHostName() + " " + getLocalName() + ": "
+					+ message);
 		if (isLogging())
-			log.debug(ft.format(date) + " " + getDescription() + " " + NetworkUtils.getHostName() + " " + getLocalName() + ": " + message);
-			
+			log.debug(ft.format(date) + " " + getDescription() + " "
+					+ NetworkUtils.getHostName() + " " + getLocalName() + ": "
+					+ message);
+
 	}
 
 	public String getLocalName() {

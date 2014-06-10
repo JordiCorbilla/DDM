@@ -31,10 +31,11 @@ package ddm.ontology;
 import jade.content.AgentAction;
 
 /**
-* Protege name: Arff_Repository
-* @author ontology bean generator
-* @version 2014/04/15, 22:56:31
-*/
+ * Protege name: Arff_Repository
+ * 
+ * @author ontology bean generator
+ * @version 2014/04/15, 22:56:31
+ */
 
 @SuppressWarnings("serial")
 public class ClassificationResult implements AgentAction {
@@ -45,68 +46,87 @@ public class ClassificationResult implements AgentAction {
 	private int trainingSize;
 	private int numCorrect;
 	private double percentage;
-	private String  instanceValue;
+	private String instanceValue;
 	private String predictedInstanceValue;
 	private double instanceClassification;
 	private double instancePredictedValue;
-	
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getType() {
 		return type;
 	}
+
 	public void setType(String type) {
 		this.type = type;
 	}
+
 	public long getDuration() {
 		return duration;
 	}
+
 	public void setDuration(long duration) {
 		this.duration = duration;
 	}
+
 	public int getTrainingSize() {
 		return trainingSize;
 	}
+
 	public void setTrainingSize(int trainingSize) {
 		this.trainingSize = trainingSize;
 	}
+
 	public int getNumCorrect() {
 		return numCorrect;
 	}
+
 	public void setNumCorrect(int numCorrect) {
 		this.numCorrect = numCorrect;
 	}
+
 	public double getPercentage() {
 		return percentage;
 	}
+
 	public void setPercentage(double percentage) {
 		this.percentage = percentage;
 	}
+
 	public String getInstanceValue() {
 		return instanceValue;
 	}
+
 	public void setInstanceValue(String instanceValue) {
 		this.instanceValue = instanceValue;
 	}
+
 	public double getInstanceClassification() {
 		return instanceClassification;
 	}
+
 	public void setInstanceClassification(double instanceClassification) {
 		this.instanceClassification = instanceClassification;
 	}
+
 	public double getInstancePredictedValue() {
 		return instancePredictedValue;
 	}
+
 	public void setInstancePredictedValue(double instancePredictedValue) {
 		this.instancePredictedValue = instancePredictedValue;
 	}
+
 	public String getPredictedInstanceValue() {
 		return predictedInstanceValue;
 	}
+
 	public void setPredictedInstanceValue(String predictedInstanceValue) {
 		this.predictedInstanceValue = predictedInstanceValue;
 	}

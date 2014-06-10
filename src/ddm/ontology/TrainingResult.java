@@ -31,10 +31,11 @@ package ddm.ontology;
 import jade.content.AgentAction;
 
 /**
-* Protege name: Arff_Repository
-* @author ontology bean generator
-* @version 2014/04/15, 22:56:31
-*/
+ * Protege name: Arff_Repository
+ * 
+ * @author ontology bean generator
+ * @version 2014/04/15, 22:56:31
+ */
 
 @SuppressWarnings("serial")
 public class TrainingResult implements AgentAction {
@@ -42,22 +43,27 @@ public class TrainingResult implements AgentAction {
 	private String name;
 	private String type;
 	private long duration;
-	
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getType() {
 		return type;
 	}
+
 	public void setType(String type) {
 		this.type = type;
 	}
+
 	public long getDuration() {
 		return duration;
 	}
+
 	public void setDuration(long duration) {
 		this.duration = duration;
 	}

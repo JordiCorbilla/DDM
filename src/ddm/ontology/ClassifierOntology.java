@@ -32,148 +32,201 @@ package ddm.ontology;
 import jade.content.onto.*;
 import jade.content.schema.*;
 
-/** file: ClassifierOntology.java
+/**
+ * file: ClassifierOntology.java
+ * 
  * @author ontology bean generator
  * @version 2014/04/15, 22:56:31
  */
 @SuppressWarnings("serial")
-public class ClassifierOntology extends jade.content.onto.Ontology  {
-  //NAME
-  public static final String ONTOLOGY_NAME = "Classifier";
-  // The singleton instance of this ontology
-  private static ReflectiveIntrospector introspect = new ReflectiveIntrospector();
-  private static Ontology theInstance = new ClassifierOntology();
-  public static Ontology getInstance() {
-     return theInstance;
-  }
+public class ClassifierOntology extends jade.content.onto.Ontology {
+	// NAME
+	public static final String ONTOLOGY_NAME = "Classifier";
+	// The singleton instance of this ontology
+	private static ReflectiveIntrospector introspect = new ReflectiveIntrospector();
+	private static Ontology theInstance = new ClassifierOntology();
 
+	public static Ontology getInstance() {
+		return theInstance;
+	}
 
-   // VOCABULARY
-    public static final String OPERATION_NUM_TEST_DATA="num_test_data";
-    public static final String OPERATION_NUM_TRAIN_DATA="num_train_data";
-    public static final String OPERATION="Operation";
-    
-    public static final String CSV_REPOSITORY="Csv_Repository";
-    public static final String CSV_REPOSITORY_NAME="name";
-    public static final String CSV_REPOSITORY_ROWS="rows";
-    public static final String CSV_REPOSITORY_HEADER="header";
-    
-    public static final String ARFF_TRAINING_REPOSITORY="Arff_Training_Repository";
-    public static final String ARFF_TRAINING_REPOSITORY_NAME="name";
-    public static final String ARFF_TRAINING_REPOSITORY_HEADER="header";    
-    public static final String ARFF_TRAINING_REPOSITORY_DATA="data";
-    
-    public static final String MANAGERSETTINGS="ManagerSettings";
-    public static final String MANAGERSETTINGS_CLASSIFIERMODULE="ClassifierModule";
+	// VOCABULARY
+	public static final String OPERATION_NUM_TEST_DATA = "num_test_data";
+	public static final String OPERATION_NUM_TRAIN_DATA = "num_train_data";
+	public static final String OPERATION = "Operation";
 
-    public static final String CLASSIFIERSETTINGS="ClassifierSettings";
-    public static final String CLASSIFIERSETTINGS_NAME="Name";
-    public static final String CLASSIFIERSETTINGS_CLASSIFIERMODULE="ClassifierModule";
-    public static final String CLASSIFIERSETTINGS_PERCENTAGETRAININGDATA="PercentageTrainingData";    
-    
-    public static final String DATAINSTANCE="DataInstance";
-    public static final String DATAINSTANCE_VALUE="Value";    
-    
-    public static final String TRAININGRESULT="TrainingResult";
-    public static final String TRAININGRESULT_NAME="name"; 
-    public static final String TRAININGRESULT_TYPE="type";
-    public static final String TRAININGRESULT_DURATION="duration";     
-    
-    public static final String CLASSIFICATIONRESULT="ClassificationResult";
-    public static final String CLASSIFICATIONRESULT_NAME="name"; 
-    public static final String CLASSIFICATIONRESULT_TYPE="type";
-    public static final String CLASSIFICATIONRESULT_DURATION="duration";
-    public static final String CLASSIFICATIONRESULT_TRAININGSIZE="trainingSize";
-    public static final String CLASSIFICATIONRESULT_NUMCORRECT="numCorrect";
-    public static final String CLASSIFICATIONRESULT_PERCENTAGE="percentage";
-    public static final String CLASSIFICATIONRESULT_INSTANCEVALUE="instanceValue";
-    public static final String CLASSIFICATIONRESULT_PREDICTEDINSTANCEVALUE="predictedInstanceValue"; 
-    public static final String CLASSIFICATIONRESULT_INSTANCECLASSIFICATION="instanceClassification"; 
-    public static final String CLASSIFICATIONRESULT_INSTANCEPREDICTEDVALUE="instancePredictedValue"; 
-    
-  /**
-   * Constructor
-  */
-  private ClassifierOntology(){ 
-    super(ONTOLOGY_NAME, BasicOntology.getInstance());
-    try { 
+	public static final String CSV_REPOSITORY = "Csv_Repository";
+	public static final String CSV_REPOSITORY_NAME = "name";
+	public static final String CSV_REPOSITORY_ROWS = "rows";
+	public static final String CSV_REPOSITORY_HEADER = "header";
 
-    // adding Concept(s)
-    ConceptSchema operationSchema = new ConceptSchema(OPERATION);
-    add(operationSchema, ddm.ontology.Operation.class);
+	public static final String ARFF_TRAINING_REPOSITORY = "Arff_Training_Repository";
+	public static final String ARFF_TRAINING_REPOSITORY_NAME = "name";
+	public static final String ARFF_TRAINING_REPOSITORY_HEADER = "header";
+	public static final String ARFF_TRAINING_REPOSITORY_DATA = "data";
 
-    // adding AgentAction(s)
-    AggregateSchema rowsSchema = new AggregateSchema(BasicOntology.SEQUENCE);
-    
-    AgentActionSchema as = new AgentActionSchema(CSV_REPOSITORY);
-	add(as, Csv_Repository.class);
-    as.add(CSV_REPOSITORY_NAME, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    as.add(CSV_REPOSITORY_HEADER, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    as.add(CSV_REPOSITORY_ROWS, rowsSchema);
-    
-    AggregateSchema ArffDataSchema = new AggregateSchema(BasicOntology.SEQUENCE);
-    AggregateSchema ArffHeaderSchema = new AggregateSchema(BasicOntology.SEQUENCE);
-    
-    AgentActionSchema as1 = new AgentActionSchema(ARFF_TRAINING_REPOSITORY);
-	add(as1, Arff_Training_Repository.class);
-    as1.add(ARFF_TRAINING_REPOSITORY_NAME, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    as1.add(ARFF_TRAINING_REPOSITORY_HEADER, ArffHeaderSchema);
-    as1.add(ARFF_TRAINING_REPOSITORY_DATA, ArffDataSchema);
-    
-    AgentActionSchema as2 = new AgentActionSchema(MANAGERSETTINGS);
-	add(as2, ManagerSettings.class);
-    as2.add(MANAGERSETTINGS_CLASSIFIERMODULE, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    
-    AgentActionSchema as3 = new AgentActionSchema(CLASSIFIERSETTINGS);
-	add(as3, ClassifierSettings.class);
-    as3.add(CLASSIFIERSETTINGS_NAME, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    as3.add(CLASSIFIERSETTINGS_CLASSIFIERMODULE, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    as3.add(CLASSIFIERSETTINGS_PERCENTAGETRAININGDATA, (PrimitiveSchema) getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    
-    AgentActionSchema as4 = new AgentActionSchema(DATAINSTANCE);
-	add(as4, DataInstance.class);
-    as4.add(DATAINSTANCE_VALUE, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    
-    AgentActionSchema as5 = new AgentActionSchema(TRAININGRESULT);
-	add(as5, TrainingResult.class);
-    as5.add(TRAININGRESULT_NAME, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    as5.add(TRAININGRESULT_TYPE, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);    
-    as5.add(TRAININGRESULT_DURATION, (PrimitiveSchema) getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);    
+	public static final String MANAGERSETTINGS = "ManagerSettings";
+	public static final String MANAGERSETTINGS_CLASSIFIERMODULE = "ClassifierModule";
 
-    AgentActionSchema as6 = new AgentActionSchema(CLASSIFICATIONRESULT);
-	add(as6, ClassificationResult.class);
-    as6.add(CLASSIFICATIONRESULT_NAME, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    as6.add(CLASSIFICATIONRESULT_TYPE, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);    
-    as6.add(CLASSIFICATIONRESULT_DURATION, (PrimitiveSchema) getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    as6.add(CLASSIFICATIONRESULT_TRAININGSIZE, (PrimitiveSchema) getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    as6.add(CLASSIFICATIONRESULT_NUMCORRECT, (PrimitiveSchema) getSchema(BasicOntology.INTEGER), ObjectSchema.MANDATORY);
-    as6.add(CLASSIFICATIONRESULT_PERCENTAGE, (PrimitiveSchema) getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
-    as6.add(CLASSIFICATIONRESULT_INSTANCEVALUE, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    as6.add(CLASSIFICATIONRESULT_PREDICTEDINSTANCEVALUE, (PrimitiveSchema) getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
-    as6.add(CLASSIFICATIONRESULT_INSTANCECLASSIFICATION, (PrimitiveSchema) getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
-    as6.add(CLASSIFICATIONRESULT_INSTANCEPREDICTEDVALUE, (PrimitiveSchema) getSchema(BasicOntology.FLOAT), ObjectSchema.MANDATORY);
-    
-    // adding AID(s)
+	public static final String CLASSIFIERSETTINGS = "ClassifierSettings";
+	public static final String CLASSIFIERSETTINGS_NAME = "Name";
+	public static final String CLASSIFIERSETTINGS_CLASSIFIERMODULE = "ClassifierModule";
+	public static final String CLASSIFIERSETTINGS_PERCENTAGETRAININGDATA = "PercentageTrainingData";
 
-    // adding Predicate(s)
+	public static final String DATAINSTANCE = "DataInstance";
+	public static final String DATAINSTANCE_VALUE = "Value";
 
+	public static final String TRAININGRESULT = "TrainingResult";
+	public static final String TRAININGRESULT_NAME = "name";
+	public static final String TRAININGRESULT_TYPE = "type";
+	public static final String TRAININGRESULT_DURATION = "duration";
 
-    // adding fields
-    operationSchema.add(OPERATION_NUM_TRAIN_DATA, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.OPTIONAL);
-    operationSchema.add(OPERATION_NUM_TEST_DATA, (TermSchema)getSchema(BasicOntology.INTEGER), ObjectSchema.OPTIONAL);
+	public static final String CLASSIFICATIONRESULT = "ClassificationResult";
+	public static final String CLASSIFICATIONRESULT_NAME = "name";
+	public static final String CLASSIFICATIONRESULT_TYPE = "type";
+	public static final String CLASSIFICATIONRESULT_DURATION = "duration";
+	public static final String CLASSIFICATIONRESULT_TRAININGSIZE = "trainingSize";
+	public static final String CLASSIFICATIONRESULT_NUMCORRECT = "numCorrect";
+	public static final String CLASSIFICATIONRESULT_PERCENTAGE = "percentage";
+	public static final String CLASSIFICATIONRESULT_INSTANCEVALUE = "instanceValue";
+	public static final String CLASSIFICATIONRESULT_PREDICTEDINSTANCEVALUE = "predictedInstanceValue";
+	public static final String CLASSIFICATIONRESULT_INSTANCECLASSIFICATION = "instanceClassification";
+	public static final String CLASSIFICATIONRESULT_INSTANCEPREDICTEDVALUE = "instancePredictedValue";
 
-    // adding name mappings
+	/**
+	 * Constructor
+	 */
+	private ClassifierOntology() {
+		super(ONTOLOGY_NAME, BasicOntology.getInstance());
+		try {
 
-    // adding inheritance
+			// adding Concept(s)
+			ConceptSchema operationSchema = new ConceptSchema(OPERATION);
+			add(operationSchema, ddm.ontology.Operation.class);
 
-   }catch (java.lang.Exception e) {e.printStackTrace();}
-  }
+			// adding AgentAction(s)
+			AggregateSchema rowsSchema = new AggregateSchema(
+					BasicOntology.SEQUENCE);
 
-public static ReflectiveIntrospector getIntrospect() {
-	return introspect;
+			AgentActionSchema as = new AgentActionSchema(CSV_REPOSITORY);
+			add(as, Csv_Repository.class);
+			as.add(CSV_REPOSITORY_NAME,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as.add(CSV_REPOSITORY_HEADER,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as.add(CSV_REPOSITORY_ROWS, rowsSchema);
+
+			AggregateSchema ArffDataSchema = new AggregateSchema(
+					BasicOntology.SEQUENCE);
+			AggregateSchema ArffHeaderSchema = new AggregateSchema(
+					BasicOntology.SEQUENCE);
+
+			AgentActionSchema as1 = new AgentActionSchema(
+					ARFF_TRAINING_REPOSITORY);
+			add(as1, Arff_Training_Repository.class);
+			as1.add(ARFF_TRAINING_REPOSITORY_NAME,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as1.add(ARFF_TRAINING_REPOSITORY_HEADER, ArffHeaderSchema);
+			as1.add(ARFF_TRAINING_REPOSITORY_DATA, ArffDataSchema);
+
+			AgentActionSchema as2 = new AgentActionSchema(MANAGERSETTINGS);
+			add(as2, ManagerSettings.class);
+			as2.add(MANAGERSETTINGS_CLASSIFIERMODULE,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+
+			AgentActionSchema as3 = new AgentActionSchema(CLASSIFIERSETTINGS);
+			add(as3, ClassifierSettings.class);
+			as3.add(CLASSIFIERSETTINGS_NAME,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as3.add(CLASSIFIERSETTINGS_CLASSIFIERMODULE,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as3.add(CLASSIFIERSETTINGS_PERCENTAGETRAININGDATA,
+					(PrimitiveSchema) getSchema(BasicOntology.INTEGER),
+					ObjectSchema.MANDATORY);
+
+			AgentActionSchema as4 = new AgentActionSchema(DATAINSTANCE);
+			add(as4, DataInstance.class);
+			as4.add(DATAINSTANCE_VALUE,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+
+			AgentActionSchema as5 = new AgentActionSchema(TRAININGRESULT);
+			add(as5, TrainingResult.class);
+			as5.add(TRAININGRESULT_NAME,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as5.add(TRAININGRESULT_TYPE,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as5.add(TRAININGRESULT_DURATION,
+					(PrimitiveSchema) getSchema(BasicOntology.INTEGER),
+					ObjectSchema.MANDATORY);
+
+			AgentActionSchema as6 = new AgentActionSchema(CLASSIFICATIONRESULT);
+			add(as6, ClassificationResult.class);
+			as6.add(CLASSIFICATIONRESULT_NAME,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as6.add(CLASSIFICATIONRESULT_TYPE,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as6.add(CLASSIFICATIONRESULT_DURATION,
+					(PrimitiveSchema) getSchema(BasicOntology.INTEGER),
+					ObjectSchema.MANDATORY);
+			as6.add(CLASSIFICATIONRESULT_TRAININGSIZE,
+					(PrimitiveSchema) getSchema(BasicOntology.INTEGER),
+					ObjectSchema.MANDATORY);
+			as6.add(CLASSIFICATIONRESULT_NUMCORRECT,
+					(PrimitiveSchema) getSchema(BasicOntology.INTEGER),
+					ObjectSchema.MANDATORY);
+			as6.add(CLASSIFICATIONRESULT_PERCENTAGE,
+					(PrimitiveSchema) getSchema(BasicOntology.FLOAT),
+					ObjectSchema.MANDATORY);
+			as6.add(CLASSIFICATIONRESULT_INSTANCEVALUE,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as6.add(CLASSIFICATIONRESULT_PREDICTEDINSTANCEVALUE,
+					(PrimitiveSchema) getSchema(BasicOntology.STRING),
+					ObjectSchema.MANDATORY);
+			as6.add(CLASSIFICATIONRESULT_INSTANCECLASSIFICATION,
+					(PrimitiveSchema) getSchema(BasicOntology.FLOAT),
+					ObjectSchema.MANDATORY);
+			as6.add(CLASSIFICATIONRESULT_INSTANCEPREDICTEDVALUE,
+					(PrimitiveSchema) getSchema(BasicOntology.FLOAT),
+					ObjectSchema.MANDATORY);
+
+			// adding AID(s)
+
+			// adding Predicate(s)
+
+			// adding fields
+			operationSchema.add(OPERATION_NUM_TRAIN_DATA,
+					(TermSchema) getSchema(BasicOntology.INTEGER),
+					ObjectSchema.OPTIONAL);
+			operationSchema.add(OPERATION_NUM_TEST_DATA,
+					(TermSchema) getSchema(BasicOntology.INTEGER),
+					ObjectSchema.OPTIONAL);
+
+			// adding name mappings
+
+			// adding inheritance
+
+		} catch (java.lang.Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static ReflectiveIntrospector getIntrospect() {
+		return introspect;
+	}
+
+	public static void setIntrospect(ReflectiveIntrospector introspect) {
+		ClassifierOntology.introspect = introspect;
+	}
 }
-
-public static void setIntrospect(ReflectiveIntrospector introspect) {
-	ClassifierOntology.introspect = introspect;
-}
-  }
