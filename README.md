@@ -10,8 +10,10 @@ Two types of agents:
  - Classifier
 
 Manager Agent processes the dataSets and sends the training data and the data to classify to every classifier instance.
-Classifier agent, uses Weka to classify the input data using algorithms such as decision tree, closest neightbour or neuronal network and returns the classification result to the Manager. The manager then creates a decision based on the input from every agent and writes the output with the initial data for comparison purposes.
 
+Classifier agent, uses Weka to classify the input data using algorithms such as decision tree (J48), nearest neightbour (IBk) or neuronal networks (MLP) and returns the classification result to the Manager. The manager then creates a decision based on the input from every agent and writes the output with the initial data for comparison purposes.
+
+Diagram below displays the architecture:
 ![](https://raw.github.com/JordiCorbilla/DDM/master/images/diagram.png)
 
 
