@@ -16,4 +16,6 @@ Classifier agent, uses Weka to classify the input data using algorithms such as 
 Diagram below displays the architecture:
 ![](https://raw.github.com/JordiCorbilla/DDM/master/images/diagram.png)
 
-
+Technical documentation can be found here: (*Only in Catalan)
+  - [DDM Document](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/32761/6/u1032608TFG0614mem%c3%b2ria.pdf)
+  - [Bachelor's Thesys presentation](http://openaccess.uoc.edu/webapps/o2/handle/10609/32761)
