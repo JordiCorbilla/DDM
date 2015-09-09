@@ -2,6 +2,7 @@ DDM
 ===
 Distributed decision-making system with Jade and Weka
 
+[![Downloads](https://img.shields.io/badge/downloads-100-blue.svg)](https://app.box.com/s/q55d26162yrmsviu9259) [![Stable Release](https://img.shields.io/badge/version-1.0-blue.svg)](https://app.box.com/s/q55d26162yrmsviu9259) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://app.box.com/s/q55d26162yrmsviu9259) [![Java version](https://img.shields.io/badge/java-7-red.svg)](https://app.box.com/s/q55d26162yrmsviu9259) [![Weka version](https://img.shields.io/badge/weka-v3.7.10-red.svg)](https://app.box.com/s/q55d26162yrmsviu9259) [![Jade version](https://img.shields.io/badge/jade-v4.3.1-red.svg)](https://app.box.com/s/q55d26162yrmsviu9259) [![Protege version](https://img.shields.io/badge/protege-v43.4.5-red.svg)](https://app.box.com/s/q55d26162yrmsviu9259)
 
 DDM is a framework that combines intelligent agents and Artificial Intelligence traditional algorithms such as classifiers. The central idea of this project is to create a multi-agent system that allows to compare different views into a single one.
 
