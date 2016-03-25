@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ddm by JordiCorbilla</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ddm</h1>
+        <p>Distributed decision-making system with Jade and Weka</p>
+
+        <p class="view"><a href="https://github.com/JordiCorbilla/DDM">View the Project on GitHub <small>JordiCorbilla/DDM</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/JordiCorbilla/DDM/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/JordiCorbilla/DDM/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/JordiCorbilla/DDM">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="ddm" class="anchor" href="#ddm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DDM</h1>
+
+<p>Distributed decision-making system with Jade and Weka</p>
+
+<p><a href="https://app.box.com/s/q55d26162yrmsviu9259"><img src="https://img.shields.io/badge/downloads-100-blue.svg" alt="Downloads"></a> <a href="https://app.box.com/s/q55d26162yrmsviu9259"><img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Stable Release"></a> <a href="https://app.box.com/s/q55d26162yrmsviu9259"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a> <a href="https://app.box.com/s/q55d26162yrmsviu9259"><img src="https://img.shields.io/badge/java-7-red.svg" alt="Java version"></a> <a href="https://app.box.com/s/q55d26162yrmsviu9259"><img src="https://img.shields.io/badge/weka-v3.7.10-red.svg" alt="Weka version"></a> <a href="https://app.box.com/s/q55d26162yrmsviu9259"><img src="https://img.shields.io/badge/jade-v4.3.1-red.svg" alt="Jade version"></a> <a href="https://app.box.com/s/q55d26162yrmsviu9259"><img src="https://img.shields.io/badge/protege-v3.4.5-red.svg" alt="Protege version"></a></p>
+
+<p>DDM is a framework that combines intelligent agents and Artificial Intelligence traditional algorithms such as classifiers. The central idea of this project is to create a multi-agent system that allows to compare different views into a single one.</p>
+
+<p>Two types of agents:</p>
+
+<ul>
+<li>Manager</li>
+<li>Classifier</li>
+</ul>
+
+<p>Manager Agent processes the dataSets and sends the training data and the data to classify to every classifier instance.</p>
+
+<p>Classifier agent, uses Weka to classify the input data using algorithms such as decision tree (J48), nearest neightbour (IBk) or neuronal networks (MLP) and returns the classification result to the Manager. The manager then creates a decision based on the input from every agent and writes the output with the initial data for comparison purposes.</p>
+
+<p>Diagram below displays the architecture:
+<img src="https://raw.github.com/JordiCorbilla/DDM/master/images/diagram.png" alt=""></p>
+
+<p>Technical documentation can be found here: (*Only in Catalan)</p>
+
+<ul>
+<li><a href="http://openaccess.uoc.edu/webapps/o2/bitstream/10609/32761/6/u1032608TFG0614mem%c3%b2ria.pdf">DDM Document</a></li>
+<li><a href="http://openaccess.uoc.edu/webapps/o2/handle/10609/32761">Bachelor's Thesys presentation</a></li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/JordiCorbilla">JordiCorbilla</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
