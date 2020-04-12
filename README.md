@@ -1,4 +1,7 @@
-DDM
+# DDM
+
+This repository contains Jordi Corbilla's Bsc dissertation: Distributed decision-making system, published by Universitat Oberta de Catalunya in 2014 [http://openaccess.uoc.edu/webapps/o2/handle/10609/32761]. The dissertation PDFs and the dissertation sources are licensed under the Creative Commons Attribution license, as described in the LICENSE file.
+
 ===
 Distributed decision-making system with Jade and Weka
 
